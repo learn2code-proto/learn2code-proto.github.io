@@ -24,9 +24,7 @@ do
         TITLE="$HOME_TITLE"
     else
         FILE_NAME="$(basename "$PAGE")"
-        TITLE=( $(echo "$FILE_NAME" \
-                      | sed 's/.html//' \
-                      | tr '\-' ' ') )
+        TITLE=( $(echo "$FILE_NAME" | sed 's/.html//' | tr '\-' ' ') )
         TITLE="${TITLE[@]^}"
     fi
 
