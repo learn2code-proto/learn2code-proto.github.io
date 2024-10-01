@@ -9,13 +9,13 @@ codebase.
   on the browser tab.
 - `images` contains all images referenced in the codebase at its root.
 - `pages` contains the raw HTML used to build each page:
-  
-  - `layout.html` details the HTML header and navbar used in each page. Placeholder
-    values are denoted by {{double brackets}}.
+
+  - `layout.html` details the HTML header and navbar used in each page.
+    Placeholder values are denoted by {{double brackets}}.
   - `core.html` is used to generate `index.html` at the project's root.
   - The remaining files generate their own pages who's titles reflect their
     filenames (with '-' subbed with ' ' and with proper capitalization).
-  
+
   Pages can be found at the root of the project after being built.
 - `scripts` contains all JavaScript files.
 - `styles` contains all CSS files.
