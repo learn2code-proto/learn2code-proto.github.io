@@ -19,3 +19,11 @@ codebase.
   Pages can be found at the root of the project after being built.
 - `scripts` contains all JavaScript files.
 - `styles` contains all CSS files.
+
+## BUILD.SH
+
+`build.sh` is a BASH script that builds webpages by concating each HTML file in
+`pages` (excluding `layout.html`) into a file in the project root using the
+same header, navbar, and footer found in `layout.html`.
+
+`core.html` is a special case that become `index.html`.

@@ -4,7 +4,7 @@
 # builts HTML webpages
 
 PAGE_DIR='./pages'
-HOME_TITLE='Blocks'
+HOME_TITLE='PROTO'
 
 set -eu
 
