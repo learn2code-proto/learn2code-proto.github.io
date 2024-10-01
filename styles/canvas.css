@@ -1,0 +1,9 @@
+div.canvas {
+  background-color:red;
+
+  margin:64px auto;
+  padding:16px;
+
+  max-width:1024px;
+  width:80%;
+}

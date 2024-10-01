@@ -1,0 +1,41 @@
+ul.nav {
+  position:fixed;
+  top:0;
+  width:100%;
+
+  list-style-type:none;
+
+  background-color:#333;
+
+  padding:16px 16px;
+  margin:0px;
+}
+
+ul.nav li {
+  text-align:center;
+  display:inline;
+
+  border-right:1px solid #FFF;
+  padding-right:8px;
+  padding-left:4px;
+}
+
+ul.nav li:last-child {
+  border-right:none;
+}
+
+ul.nav li img {
+  height:16px;
+}
+
+ul.nav li a {
+  text-decoration:none;
+
+  color:#FFF;
+
+  padding:4px;
+}
+
+ul.nav li a:hover {
+  color:#569;
+}
