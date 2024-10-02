@@ -1,4 +1,4 @@
-ul.nav {
+ul#nav {
   position:fixed;
   top:0;
   width:100%;
@@ -11,7 +11,7 @@ ul.nav {
   margin:0px;
 }
 
-ul.nav li {
+ul#nav li {
   text-align:center;
   display:inline;
 
@@ -20,15 +20,15 @@ ul.nav li {
   padding-left:4px;
 }
 
-ul.nav li:last-child {
+ul#nav li:last-child {
   border-right:none;
 }
 
-ul.nav li img {
+ul#nav img {
   height:16px;
 }
 
-ul.nav li a {
+ul#nav a {
   text-decoration:none;
 
   color:#FFF;
@@ -36,6 +36,6 @@ ul.nav li a {
   padding:4px;
 }
 
-ul.nav li a:hover {
+ul#nav a:hover {
   color:#569;
 }

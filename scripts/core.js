@@ -1,1 +1,3 @@
-console.log("prinsessasi on eri linnassa")
+import "./blockly-core.js";
+
+console.log("prinsessasi on eri linnassa");
