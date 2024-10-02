@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>PROTO</title>
+  <title>Block Coding Demo</title>
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -11,12 +11,18 @@
   <link rel="stylesheet" href="./styles/core.css"/>
   <link rel="stylesheet" href="./styles/nav.css"/>
   <link rel="stylesheet" href="./styles/canvas.css"/>
+  <link rel="stylesheet" href="./styles/blockly-window.css"/>
 
   <link rel="shortcut icon" href="./favicon/favicon.ico"/>
 
-  <script defer src="./javascript/core.js" type="module"></script>
-  <script defer src="./javascript/blockly-core.js" type="module"></script>
-  <script defer src="./javascript/blockly-mapper.js" type="module"></script>
+  <script defer src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+  <script defer src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+  <script defer src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+  <script defer src="https://unpkg.com/blockly/msg/en.js"></script>
+
+  <script defer src="./scripts/core.js" type="module"></script>
+  <script defer src="./scripts/blockly-core.js" type="module"></script>
+  <script defer src="./scripts/blockly-mapper.js" type="module"></script>
 </head>
 
 <body>
@@ -28,7 +34,13 @@
 
   <div class="canvas">
 
-    foo
+    <table class="blockly-window">
+  <tr>
+    <td class="toolbox">toolbox</td>
+    <td class="assembler">assembler</td>
+    <td class="preview">preview</td>
+  </tr>
+</table>
 
   </div>
 </body>

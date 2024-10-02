@@ -1,0 +1,16 @@
+table.blockly-window {
+  border:1px solid red;
+
+  width:100%;
+  height:100%;
+}
+
+table.blockly-window td {
+  border:1px solid blue;
+
+  height:100%;
+}
+
+td.assembler {
+  width:50%;
+}

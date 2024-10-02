@@ -4,7 +4,7 @@
 # builts HTML webpages
 
 PAGE_DIR='./pages'
-HOME_TITLE='PROTO'
+HOME_TITLE='Block Coding Demo'
 
 set -eu
 
