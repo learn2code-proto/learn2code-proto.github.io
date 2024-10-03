@@ -7,6 +7,17 @@ table#blockly-window td {
   height:100%;
 }
 
+table#blockly-window th {
+  text-align:left;
+}
+
+button#save-code {
+  border:1px solid #333;
+  border-radius:8px;
+
+  float:right;
+}
+
 td#canvas {
   width:70%;
 }
