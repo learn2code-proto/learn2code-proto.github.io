@@ -32,7 +32,7 @@ function updateCode(event) {
 
     const code = python.pythonGenerator.workspaceToCode(workspace);
     const target = document.getElementById('code-container');
-    
+
     target.innerHTML = 'import make\n\n' + code;
 }
 
