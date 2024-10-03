@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ctw // 2024-09-30
-# builts HTML webpages
+# builds HTML webpages
 
 PAGE_DIR='./pages'
 HOME_TITLE='Block Coding Demo'

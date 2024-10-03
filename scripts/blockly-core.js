@@ -1,42 +1,39 @@
-console.log("voi voi. se on korvakoira");
+import "./blockly-definitions.js"
+import "./blockly-generators.js"
 
 const toolbox = {
     kind: 'flyoutToolbox',
     contents: [
         {
             kind: 'block',
-            type: 'controls_if',
+            type: 'smallmotor',
         },
         {
             kind: 'block',
-            type: 'logic_compare',
-        },
-        {
-            kind: 'block',
-            type: 'controls_repeat_ext',
-        },
-        {
-            kind: 'block',
-            type: 'math_number',
-            fields: {
-                NUM: 123,
-            },
-        },
-        {
-            kind: 'block',
-            type: 'math_arithmetic',
-        },
-        {
-            kind: 'block',
-            type: 'text',
-        },
-        {
-            kind: 'block',
-            type: 'text_print',
+            type: 'largemotor',
         },
     ],
 };
 
-Blockly.inject('editor', {
+var workspace = Blockly.inject('editor', {
     toolbox: toolbox,
 });
+
+const supportedEvents = new Set([
+    Blockly.Events.BLOCK_CHANGE,
+    Blockly.Events.BLOCK_CREATE,
+    Blockly.Events.BLOCK_DELETE,
+    Blockly.Events.BLOCK_MOVE,
+]);
+
+function updateCode(event) {
+    if (workspace.isDragging()) return;
+    if (!supportedEvents.has(event.type)) return;
+
+    const code = python.pythonGenerator.workspaceToCode(workspace);
+    const target = document.getElementById('code-container');
+    
+    target.innerHTML = 'import make\n\n' + code;
+}
+
+workspace.addChangeListener(updateCode);

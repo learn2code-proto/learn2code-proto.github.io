@@ -4,13 +4,28 @@ body {
 }
 
 div#buffer {
-  border:1px solid #333;
+  border:2px solid #333;
   border-radius:8px;
+  border-top:none;
+  border-bottom:none;
 
   margin:64px auto;
-  padding:8px;
+  padding:16px;
 
   max-width:1024px;
   width:80%;
   min-width:512px;
+}
+
+div#buffer h1 {
+  padding:0;
+  margin:0;
+
+  text-align:center;
+}
+
+div#buffer p {
+  padding:0px 256px;
+
+  text-indent:32px;
 }
