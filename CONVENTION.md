@@ -1,4 +1,4 @@
-# FILE STRUCTURE
+# PROJECT CONVENTION
 
 This document details the file structure and conventions of this website's
 codebase.
@@ -17,7 +17,7 @@ codebase.
     filenames (with '-' subbed with ' ' and with proper capitalization).
 
   Pages can be found at the root of the project after being built.
-- `scripts` contains all JavaScript files.
+- `scripts` contains all javascript files.
 - `styles` contains all CSS files.
 
 ## BUILD.SH
@@ -26,4 +26,24 @@ codebase.
 `pages` (excluding `layout.html`) into a file in the project root using the
 same header, navbar, and footer found in `layout.html`.
 
-`core.html` is a special case that become `index.html`.
+`core.html` is a special case that becomes `index.html`.
+
+## HTML
+
+The HTML header is written once and found in `layout.html`; each page has its
+own file in the `pages` directory.
+
+## CSS
+
+General CSS should be put into `core.css`, while anything with any specificity
+should get its own file.
+
+Don't using hanging classes or ids unless generalization is intended.
+
+## JAVASCRIPT
+
+All javascript files should be imported into `core.js`, not included in the
+HTML header as an additional `<script/>`.
+
+`core.js` should include general scripts for controlling buttons or visual
+functionality, while other uses should get their own file.
