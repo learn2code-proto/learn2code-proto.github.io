@@ -1,13 +1,9 @@
 table#blockly-window {
-  /* border:1px solid red; */
-
   width:100%;
   height:512px;
 }
 
 table#blockly-window td {
-  /* border:1px solid blue; */
-
   height:100%;
 }
 
@@ -25,9 +21,11 @@ div#editor {
 td#preview {
   vertical-align:top;
 
-  padding:0px 8px;
+  background-color:#DDD;
+  opacity:75%;
 }
 
 td#preview pre {
-  /* border:1px solid lime; */
+  margin:0px;
+  padding:8px;
 }

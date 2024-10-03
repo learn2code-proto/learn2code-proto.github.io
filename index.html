@@ -1,3 +1,4 @@
+<!-- !! GENERATED PAGE !! NOT SOURCE CODE !! -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,6 @@
   <meta name="author" content="Carston Wiebe (ctwiebe23@gmail.com)"/>
   <meta name="description" content="Block coding website (built using Google's Blockly) used by the University of Nebraska-Lincoln's PROTO RSO."/>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
   <link rel="stylesheet" href="./styles/core.css"/>
   <link rel="stylesheet" href="./styles/nav.css"/>
   <link rel="stylesheet" href="./styles/blockly-window.css"/>
@@ -19,7 +19,6 @@
   <script defer src="https://unpkg.com/blockly/blocks_compressed.js"></script>
   <script defer src="https://unpkg.com/blockly/python_compressed.js"></script>
   <script defer src="https://unpkg.com/blockly/msg/en.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script defer src="./scripts/core.js" type="module"></script>
 </head>
 
@@ -37,10 +36,12 @@
     <table id="blockly-window">
   <tr>
     <td id="canvas">
+      <!-- Contains the Blockly editor. -->
       <div id="editor"/>
     </td>
 
     <td id="preview">
+      <!-- Contains the code preview. -->
       <pre>
 <code id="code-container" class="language-python"/>
       </pre>

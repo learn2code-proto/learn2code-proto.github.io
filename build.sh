@@ -28,10 +28,12 @@ do
         TITLE="${TITLE[@]^}"
     fi
 
+    echo '<!-- !! GENERATED PAGE !! NOT SOURCE CODE !! -->' > "$FILE_NAME"
+
     CONTENT="${LAYOUT/'{{body}}'/"$(IFS=''; cat "$PAGE")"}"
     CONTENT="${CONTENT/'{{title}}'/"$TITLE"}"
 
-    echo "$CONTENT" > "$FILE_NAME"
+    echo "$CONTENT" >> "$FILE_NAME"
 done
 
 exit 0
