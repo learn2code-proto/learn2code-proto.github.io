@@ -5,9 +5,12 @@
   <title>Block Coding Demo</title>
 
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+                                 shrink-to-fit=no"/>
   <meta name="author" content="Carston Wiebe (ctwiebe23@gmail.com)"/>
-  <meta name="description" content="Block coding website (built using Google's Blockly) used by the University of Nebraska-Lincoln's PROTO RSO."/>
+  <meta name="description" content="Block coding website (built using Google's
+                                    Blockly) used by the University of
+                                    Nebraska-Lincoln's PROTO RSO."/>
 
   <link rel="stylesheet" href="./styles/core.css"/>
   <link rel="stylesheet" href="./styles/nav.css"/>
@@ -33,16 +36,12 @@
 
   <div id="buffer">
 
-    <table id="blockly-window">
+<table id="blockly-window">
   <tr>
-    <th>Editor</th>
-    <th>
-      Preview
-      <button id="save-code" onclick="navigator.clipboard.writeText(document.getElementById('code-container').innerText)">
-        Copy code &darr;
-      </button>
-    </th>
+    <th>Block Editor</th>
+    <th>Code Preview <button id="save-code">Copy code &darr;</button></th>
   </tr>
+
   <tr>
     <td id="canvas">
       <!-- Contains the Blockly editor. -->
@@ -50,7 +49,7 @@
     </td>
 
     <td id="preview">
-      <!-- Contains the code preview. -->
+      <!-- Contains the code preview (not indented on purpose). -->
       <pre>
 <code id="code-container" class="language-python"/>
       </pre>
@@ -59,5 +58,7 @@
 </table>
 
   </div>
+
+  <div id="snackbar"/>
 </body>
 </html>

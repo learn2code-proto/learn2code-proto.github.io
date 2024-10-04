@@ -1,13 +1,9 @@
 <table id="blockly-window">
   <tr>
-    <th>Editor</th>
-    <th>
-      Preview
-      <button id="save-code" onclick="navigator.clipboard.writeText(document.getElementById('code-container').innerText)">
-        Copy code &darr;
-      </button>
-    </th>
+    <th>Block Editor</th>
+    <th>Code Preview <button id="save-code">Copy code &darr;</button></th>
   </tr>
+
   <tr>
     <td id="canvas">
       <!-- Contains the Blockly editor. -->
@@ -15,7 +11,7 @@
     </td>
 
     <td id="preview">
-      <!-- Contains the code preview. -->
+      <!-- Contains the code preview (not indented on purpose). -->
       <pre>
 <code id="code-container" class="language-python"/>
       </pre>

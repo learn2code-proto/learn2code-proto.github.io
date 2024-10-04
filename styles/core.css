@@ -1,11 +1,21 @@
 body {
   padding:0;
   margin:0;
+
+  font-family:Arial, Helvetica, sans-serif;
+
+  background-color:#DDD;
+}
+
+button {
+  cursor:pointer;
 }
 
 div#buffer {
   border:2px solid #333;
   border-radius:8px;
+
+  background-color:#FFF;
 
   margin:64px auto;
   padding:16px;
@@ -26,4 +36,51 @@ div#buffer p {
   padding:0px 256px;
 
   text-indent:32px;
+
+  font-size:14pt;
+}
+
+div#snackbar {
+  visibility:hidden;
+
+  padding:8px 16px;
+  margin:0px auto;
+  bottom:32px;
+
+  width:fit-content;
+  text-align:center;
+
+  background-color:#569;
+  color:#FFF;
+
+  border-radius:8px;
+
+  position:sticky;
+  z-index:1001;
+}
+
+div#snackbar.view {
+  visibility:visible;
+  -webkit-animation:fadein 0.5s, fadeout 0.5s, 4s;
+  animation:fadein 0.5s, fadeout 0.5s 4s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom:0; opacity:0;}
+  to {bottom:32px; opacity:1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom:32px; opacity:1;}
+  to {bottom:0; opacity:0;}
+}
+
+@keyframes fadein {
+  from {bottom:0; opacity:0;}
+  to {bottom:32px; opacity:1;}
+}
+
+@keyframes fadeout {
+  from {bottom:32px; opacity:1;}
+  to {bottom:0; opacity:0;}
 }

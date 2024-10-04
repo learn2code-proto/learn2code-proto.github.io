@@ -9,13 +9,28 @@ table#blockly-window td {
 
 table#blockly-window th {
   text-align:left;
+  font-size:16pt;
+  padding:0px 4px;
 }
 
 button#save-code {
   border:1px solid #333;
   border-radius:8px;
 
+  background-color:#FFF;
+
   float:right;
+
+  padding:2px 8px;
+}
+
+button#save-code:hover {
+  background-color:#DDD;
+}
+
+button#save-code:active {
+  background-color:#569;
+  color:#FFF;
 }
 
 td#canvas {
@@ -34,6 +49,8 @@ td#preview {
 
   background-color:#DDD;
   opacity:75%;
+
+  font-size:10pt;
 }
 
 td#preview pre {

@@ -12,6 +12,10 @@ const toolbox = {
             kind: 'block',
             type: 'largemotor',
         },
+        {
+            kind: 'block',
+            type: 'button',
+        },
     ],
 };
 
@@ -33,7 +37,7 @@ function updateCode(event) {
     const code = python.pythonGenerator.workspaceToCode(workspace);
     const target = document.getElementById('code-container');
 
-    target.innerHTML = 'import make\n\n' + code;
+    target.innerText = 'import make\n\n' + code;
 }
 
 workspace.addChangeListener(updateCode);
