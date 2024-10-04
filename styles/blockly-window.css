@@ -13,7 +13,7 @@ table#blockly-window th {
   padding:0px 4px;
 }
 
-button#save-code {
+button#copy-code-button {
   border:1px solid #333;
   border-radius:8px;
 
@@ -24,11 +24,11 @@ button#save-code {
   padding:2px 8px;
 }
 
-button#save-code:hover {
+button#copy-code-button:hover {
   background-color:#DDD;
 }
 
-button#save-code:active {
+button#copy-code-button:active {
   background-color:#569;
   color:#FFF;
 }
@@ -37,9 +37,9 @@ td#canvas {
   width:70%;
 }
 
-/* Refers to the div within `td#canvas`, only exists to satisfy Blockly. All
-   styling should go under `td#canvas` when possible. */
-div#editor {
+/* Only exists to satisfy Blockly. All styling should go under `td#canvas`
+ * when possible. */
+td#canvas div#editor {
   height:100%;
   width:100%;
 }
