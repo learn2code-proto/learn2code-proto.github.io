@@ -1,10 +1,8 @@
 const smallmotor = {
     init: function () {
         this.appendDummyInput('name')
-            .appendField('Make smallmotor')
-            .appendField(new Blockly.FieldTextInput('#name#'), 'name');
-        this.appendDummyInput('meta')
-            .appendField('On port')
+            .appendField(new Blockly.FieldTextInput('name'), 'name')
+            .appendField('is a smallmotor on port')
             .appendField(new Blockly.FieldDropdown([
                 ['3', '3'],
                 ['4', '4'],
@@ -15,7 +13,8 @@ const smallmotor = {
                 ['11', '11'],
                 ['12', '12'],
                 ['13', '13']
-            ]), 'port')
+            ]), 'port');
+        this.appendDummyInput('meta')
             .appendField('in direction')
             .appendField(new Blockly.FieldDropdown([
                 ['forward', '1'],
@@ -34,14 +33,13 @@ Blockly.common.defineBlocks({ smallmotor: smallmotor });
 const largemotor = {
     init: function () {
         this.appendDummyInput('name')
-            .appendField('Make largemotor')
-            .appendField(new Blockly.FieldTextInput('#name#'), 'name');
-        this.appendDummyInput('meta')
-            .appendField('On port')
+            .appendField(new Blockly.FieldTextInput('name'), 'name')
+            .appendField('is a largemotor on port')
             .appendField(new Blockly.FieldDropdown([
                 ['7', '7'],
                 ['8', '8']
-            ]), 'port')
+            ]), 'port');
+        this.appendDummyInput('meta')
             .appendField('in direction')
             .appendField(new Blockly.FieldDropdown([
                 ['forward', '1'],
@@ -60,10 +58,8 @@ Blockly.common.defineBlocks({ largemotor: largemotor });
 const button = {
     init: function () {
         this.appendDummyInput('name')
-            .appendField('Make button')
-            .appendField(new Blockly.FieldTextInput('#name#'), 'name');
-        this.appendDummyInput('meta')
-            .appendField('On port')
+            .appendField(new Blockly.FieldTextInput('name'), 'name')
+            .appendField('is a button on port')
             .appendField(new Blockly.FieldDropdown([
                 ['1', '1'],
                 ['2', '2'],
