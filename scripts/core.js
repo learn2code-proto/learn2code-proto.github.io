@@ -1,4 +1,4 @@
-import "./blockly-core.js";
+import "./blockly-instance.js";
 
 console.log("prinsessasi on eri linnassa");
 

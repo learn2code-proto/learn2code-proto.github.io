@@ -1,5 +1,5 @@
-import "./blockly-definitions.js"
-import "./blockly-generators.js"
+import "./definitions.js"
+import "./generators.js"
 
 const toolbox = {
     kind: 'categoryToolbox',
