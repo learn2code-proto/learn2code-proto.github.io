@@ -1,6 +1,11 @@
 table#blockly-window {
-  width:100%;
-  height:512px;
+  max-width:2048px;
+  width:80vw;
+  min-width:512px;
+  
+  max-height:1024px;
+  height:80vh;
+  min-height:512px;
 }
 
 table#blockly-window td {

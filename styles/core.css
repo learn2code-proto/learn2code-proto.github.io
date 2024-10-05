@@ -20,23 +20,25 @@ div#buffer {
   margin:64px auto;
   padding:16px;
 
-  max-width:1024px;
-  width:80%;
-  min-width:512px;
+  width:fit-content;
 }
 
 div#buffer h1 {
-  padding:0;
-  margin:0;
+  padding:0px;
+  margin:auto;
 
   text-align:center;
 }
 
 div#buffer p {
-  padding:0px 256px;
+  padding:8px;
+  margin:auto;
+
+  max-width:1024px;
+  width:60vw;
+  min-width:512;
 
   text-indent:32px;
-
   font-size:14pt;
 }
 
@@ -45,7 +47,7 @@ div#snackbar {
 
   padding:8px 16px;
   margin:0px auto;
-  bottom:32px;
+  bottom:10vh;
 
   width:fit-content;
   text-align:center;
@@ -67,20 +69,20 @@ div#snackbar.view {
 
 @-webkit-keyframes fadein {
   from {bottom:0; opacity:0;}
-  to {bottom:32px; opacity:1;}
+  to {bottom:10vh; opacity:1;}
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom:32px; opacity:1;}
+  from {bottom:10vh; opacity:1;}
   to {bottom:0; opacity:0;}
 }
 
 @keyframes fadein {
   from {bottom:0; opacity:0;}
-  to {bottom:32px; opacity:1;}
+  to {bottom:10vh; opacity:1;}
 }
 
 @keyframes fadeout {
-  from {bottom:32px; opacity:1;}
+  from {bottom:10vh; opacity:1;}
   to {bottom:0; opacity:0;}
 }
