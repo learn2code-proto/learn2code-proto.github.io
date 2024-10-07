@@ -16,6 +16,18 @@ const toolbox = {
                     kind: 'block',
                     type: 'largemotor',
                 },
+                {
+                    kind: 'block',
+                    type: 'spin',
+                },
+                {
+                    kind: 'block',
+                    type: 'spinForTime',
+                },
+                {
+                    kind: 'block',
+                    type: 'stop',
+                },
             ],
         },
         {
@@ -26,13 +38,20 @@ const toolbox = {
                     kind: 'block',
                     type: 'button',
                 },
+                {
+                    kind: 'block',
+                    type: 'isPressed',
+                },
             ],
         },
         {
             kind: 'category',
             name: 'Time',
             contents: [
-
+                {
+                    kind: 'block',
+                    type: 'wait',
+                },
             ],
         },
         // {
@@ -68,6 +87,10 @@ const toolbox = {
                 {
                     kind: 'block',
                     type: 'controls_if',
+                },
+                {
+                    kind: 'block',
+                    type: 'logic_negate',
                 },
                 {
                     kind: 'block',
