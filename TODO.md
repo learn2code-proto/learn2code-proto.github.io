@@ -3,9 +3,10 @@
 ## BLOCKLY
 
 - [ ] Implement variables
-- [ ] Use toolbox catagories
-- [ ] Create other blocks
-  - [ ] Create generators for those blocks
+- [x] Use toolbox catagories
+- [x] Create other blocks
+  - [x] Create generators for those blocks
+  - [ ] Create `drivetrain` blocks
   - [ ] Add code validation
 
 ## TEXT EDITOR
