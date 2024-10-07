@@ -62,6 +62,6 @@ python.pythonGenerator.forBlock['isPressed'] = function (block) {
 python.pythonGenerator.forBlock['wait'] = function (block) {
     const number_time = block.getFieldValue('time');
 
-    const code = `wait(seconds=${number_time})\n`;
+    const code = `make.wait(seconds=${number_time})\n`;
     return code;
 }
