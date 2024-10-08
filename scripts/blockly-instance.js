@@ -155,11 +155,13 @@ function updateCode(event) {
         return;
 
     const code = python.pythonGenerator.workspaceToCode(workspace);
-    const target = document.getElementById('code-container');
+    const codeContainer = document.getElementById('code-container');
 
-    target.innerHTML = Prism.highlight('import make\n\n' + code,
-                                       Prism.languages.python,
-                                       'python');
+    codeContainer.innerHTML = Prism.highlight(
+        'import make\n\n' + code,
+        Prism.languages.python,
+        'python'
+    );
 }
 
 workspace.addChangeListener(updateCode);

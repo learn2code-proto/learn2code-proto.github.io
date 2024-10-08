@@ -12,7 +12,7 @@ codebase.
 
   - `layout.html` details the HTML header and navbar used in each page.
     Placeholder values are denoted by {{double brackets}}.
-  - `core.html` is used to generate `index.html` at the project's root.
+  - `index.html` is used to generate `index.html` at the project's root.
   - The remaining files generate their own pages who's titles reflect their
     filenames (with '-' subbed with ' ' and with proper capitalization).
 
@@ -26,7 +26,8 @@ codebase.
 `pages` (excluding `layout.html`) into a file in the project root using the
 same header, navbar, and footer found in `layout.html`.
 
-`core.html` is a special case that becomes `index.html`.
+`index.html` is a special case that has a custom page title specified inside
+`build.sh`.
 
 ## HTML
 
