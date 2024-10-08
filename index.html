@@ -1,32 +1,37 @@
 <!-- !! GENERATED PAGE !! NOT SOURCE CODE !! -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Block Coding Demo</title>
-
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1,
-                                 shrink-to-fit=no"/>
-  <meta name="author" content="Carston Wiebe (ctwiebe23@gmail.com)"/>
-  <meta name="description" content="Block coding website (built using Google's
-                                    Blockly) used by the University of
-                                    Nebraska-Lincoln's PROTO RSO."/>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="./styles/core.css"/>
-  <link rel="stylesheet" href="./styles/nav.css"/>
-  <link rel="stylesheet" href="./styles/blockly-window.css"/>
-
-  <!-- Tab icon -->
-  <link rel="shortcut icon" href="./favicon/favicon.ico"/>
-
-  <!-- javascript -->
-  <script defer src="./scripts/from-blockly/blockly_compressed.js"></script>
-  <script defer src="./scripts/from-blockly/blocks_compressed.js"></script>
-  <script defer src="./scripts/from-blockly/python_compressed.js"></script>
-  <script defer src="./scripts/from-blockly/en.js"></script>
-  <script defer type="module" src="./scripts/core.js"></script>
-</head>
+  <head>
+    <title>Block Coding Demo</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="author" content="Carston Wiebe (ctwiebe23@gmail.com)"/>
+    <meta name="description" content="Block coding website (built using Google's Blockly) used by the University of Nebraska-Lincoln's PROTO RSO."/>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/core.css"/>
+    <link rel="stylesheet" href="./styles/nav.css"/>
+    <link rel="stylesheet" href="./styles/blockly-window.css"/>
+    
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"/>
+    
+    <!-- Tab icon -->
+    <link rel="shortcut icon" href="./favicon/favicon.ico"/>
+    
+    <!-- JavaScript -->
+    <script defer src="./scripts/from-blockly/blockly_compressed.js"></script>
+    <script defer src="./scripts/from-blockly/blocks_compressed.js"></script>
+    <script defer src="./scripts/from-blockly/python_compressed.js"></script>
+    <script defer src="./scripts/from-blockly/en.js"></script>
+    
+    <!-- Prism.js JavaScript for syntax highlighting -->
+     <!-- ONLY CODE IS HIGHLIGHTED USING THESE -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    
+    <script defer type="module" src="./scripts/core.js"></script>
+  </head>
 
 <body>
   <!-- Navbar of links at the top of the page. -->
@@ -54,14 +59,14 @@
   <tr>
     <td id="canvas">
       <!-- Contains the Blockly editor. -->
-      <div id="editor"/>
+      <div id="editor"></div> 
     </td>
 
     <td id="preview">
-      <!-- Contains the code preview (not indented on purpose). -->
       <pre>
-<code id="code-container" class="language-python">Your line code will appear here.</code>
+<code id="code-container" class="language-python">import make</code>
       </pre>
+
     </td>
   </tr>
 </table>
@@ -69,6 +74,6 @@
   </div>
 
   <!-- Used to display alerts. -->
-  <div id="snackbar"/>
+  <div id="snackbar"></div>
 </body>
 </html>
