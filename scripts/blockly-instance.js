@@ -157,7 +157,9 @@ function updateCode(event) {
     const code = python.pythonGenerator.workspaceToCode(workspace);
     const target = document.getElementById('code-container');
 
-    target.innerText = 'import make\n\n' + code;
+    target.innerHTML = Prism.highlight('import make\n\n' + code,
+                                       Prism.languages.python,
+                                       'python');
 }
 
 workspace.addChangeListener(updateCode);
