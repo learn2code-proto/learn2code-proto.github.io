@@ -7,10 +7,6 @@ body {
   background-color:#DDD;
 }
 
-button {
-  cursor:pointer;
-}
-
 div#buffer {
   border:2px solid #333;
   border-radius:8px;
@@ -23,15 +19,23 @@ div#buffer {
   width:fit-content;
 }
 
+div#buffer a         { color:#569 }
+div#buffer a:active  { color:#912 }
+div#buffer a:visited { color:#74A }
+
+div#buffer button {
+  cursor:pointer;
+}
+
 div#buffer h1 {
-  padding:0px;
+  padding:0px 0px 16px 0px;
   margin:auto;
 
   text-align:center;
 }
 
 div#buffer p {
-  padding:8px;
+  padding:16px 8px;
   margin:auto;
 
   max-width:1024px;

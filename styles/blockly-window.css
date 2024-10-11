@@ -2,9 +2,9 @@ table#blockly-window {
   max-width:2048px;
   width:80vw;
   min-width:512px;
-  
+
   max-height:1024px;
-  height:80vh;
+  height:70vh;
   min-height:512px;
 }
 
@@ -29,14 +29,8 @@ button#copy-code-button {
   padding:2px 8px;
 }
 
-button#copy-code-button:hover {
-  background-color:#DDD;
-}
-
-button#copy-code-button:active {
-  background-color:#569;
-  color:#FFF;
-}
+button#copy-code-button:hover  { background-color:#DDD; }
+button#copy-code-button:active { background-color:#569; color:#FFF; }
 
 td#canvas {
   width:70%;
@@ -59,7 +53,9 @@ td#preview pre {
 
   font-size:10pt;
 
-  height:75vh;
+  max-height:1024px;
+  height:70vh;
+  min-height:512px;
 
-  overflow:auto;
+  overflow:scroll;
 }
