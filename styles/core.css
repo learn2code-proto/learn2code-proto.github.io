@@ -1,3 +1,7 @@
+@import './nav.css';
+@import './blockly-window.css';
+@import './line-editor.css';
+
 body {
   padding:0;
   margin:0;
@@ -40,7 +44,7 @@ div#buffer p {
 
   max-width:1024px;
   width:60vw;
-  min-width:512;
+  min-width:512px;
 
   text-indent:32px;
   font-size:14pt;

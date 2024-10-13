@@ -8,14 +8,14 @@ table#blockly-window {
   min-height:512px;
 }
 
-table#blockly-window td {
-  height:100%;
-}
-
 table#blockly-window th {
   text-align:left;
   font-size:16pt;
   padding:0px 4px;
+}
+
+table#blockly-window td {
+  height:100%;
 }
 
 button#copy-code-button {
