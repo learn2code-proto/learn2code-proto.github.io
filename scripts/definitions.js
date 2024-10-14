@@ -17,8 +17,8 @@ const smallmotor = {
     this.appendDummyInput('meta')
       .appendField('in direction')
       .appendField(new Blockly.FieldDropdown([
-        ['forward', '1'],
-        ['backward', '-1']
+        ['clockwise', '1'],
+        ['counter-clockwise', '-1']
       ]), 'direction');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -42,8 +42,8 @@ const largemotor = {
     this.appendDummyInput('meta')
       .appendField('in direction')
       .appendField(new Blockly.FieldDropdown([
-        ['forward', '1'],
-        ['backward', '-1']
+        ['clockwise', '1'],
+        ['counter-clockwise', '-1']
       ]), 'direction');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
