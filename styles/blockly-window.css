@@ -39,7 +39,7 @@ body.darkmode button#copy-code-button {
 }
 
 body.darkmode button#copy-code-button:hover {
-  background-color:#777;
+  background-color:#555;
 }
 
 body.darkmode button#copy-code-button:active {

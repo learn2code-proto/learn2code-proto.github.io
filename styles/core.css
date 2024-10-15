@@ -26,10 +26,11 @@ div#buffer {
   width:fit-content;
 }
 
+body.darkmode div#buffer { border-color:#DDD; background-color:#333; }
+
 div#buffer a         { color:#569 }
 div#buffer a:active  { color:#912 }
 div#buffer a:visited { color:#74A }
-body.darkmode div#buffer { border-color:#DDD; background-color:#333; }
 
 div#buffer button {
   cursor:pointer;

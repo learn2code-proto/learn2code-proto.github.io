@@ -55,7 +55,7 @@ ul#nav button#darkmode-button {
 }
 
 ul#nav button#darkmode-button:hover  { background-color:#555; }
-ul#nav button#darkmode-button:active { background-color:#569; color:#FFF; }
+ul#nav button#darkmode-button:active { background-color:#569; color:#333; }
 
 body.darkmode ul#nav button#darkmode-button {
   background-color:#DDD;

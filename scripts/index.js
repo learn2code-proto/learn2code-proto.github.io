@@ -10,18 +10,18 @@ const snackbar = document.getElementById('snackbar');
 function displayOnSnackbar(text) {
   // Displays the given text on the snackbar for a time.
   snackbar.innerText = text;
-  snackbar.className = 'view';
+  snackbar.className += ' view';
 
   setTimeout(function () {
-    snackbar.className = '';
     snackbar.innerText = '';
+    snackbar.className = snackbar.className.replace(' view', '');
   }, 4250);
 }
 
 copyCodeButton.addEventListener('click', copyCodeToClipboard);
 
 function copyCodeToClipboard() {
-  // Copy all text in `code-container` to the clipboard and displays a
+  // Copy all text in `code-container` to the clipboard and display a
   // message in the snackbar.
   navigator.clipboard.writeText(codeContainer.innerText);
 
@@ -33,10 +33,10 @@ darkmodeButton.addEventListener('click', toggleDarkmode);
 function toggleDarkmode() {
   // Toggles dark and light mode.
   if (darkmodeButton.innerText == 'Dark Mode') {
-    document.body.className = 'darkmode';
+    document.body.className += ' darkmode';
     darkmodeButton.innerText = 'Light Mode';
   } else {
-    document.body.className = '';
+    document.body.className = document.body.className.replace(' darkmode', '');
     darkmodeButton.innerText = 'Dark Mode';
   }
 }
