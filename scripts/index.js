@@ -2,6 +2,7 @@ import "./blockly-instance.js";
 
 console.log("prinsessasi on eri linnassa");
 
+const darkmodeButton = document.getElementById('darkmode-button');
 const copyCodeButton = document.getElementById('copy-code-button');
 const codeContainer = document.getElementById('code-container');
 const snackbar = document.getElementById('snackbar');
@@ -12,9 +13,9 @@ function displayOnSnackbar(text) {
   snackbar.className = 'view';
 
   setTimeout(function () {
-    snackbar.className = snackbar.className.replace('view', '');
+    snackbar.className = '';
     snackbar.innerText = '';
-  }, 4500);
+  }, 4250);
 }
 
 copyCodeButton.addEventListener('click', copyCodeToClipboard);
@@ -25,4 +26,17 @@ function copyCodeToClipboard() {
   navigator.clipboard.writeText(codeContainer.innerText);
 
   displayOnSnackbar('Copied code to clipboard!');
+}
+
+darkmodeButton.addEventListener('click', toggleDarkmode);
+
+function toggleDarkmode() {
+  // Toggles dark and light mode.
+  if (darkmodeButton.innerText == 'Dark Mode') {
+    document.body.className = 'darkmode';
+    darkmodeButton.innerText = 'Light Mode';
+  } else {
+    document.body.className = '';
+    darkmodeButton.innerText = 'Dark Mode';
+  }
 }

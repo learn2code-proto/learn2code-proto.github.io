@@ -9,7 +9,10 @@ body {
   font-family:Arial, Helvetica, sans-serif;
 
   background-color:#DDD;
+  color:#333;
 }
+
+body.darkmode { background-color:#333; color:#DDD; }
 
 div#buffer {
   border:2px solid #333;
@@ -26,6 +29,7 @@ div#buffer {
 div#buffer a         { color:#569 }
 div#buffer a:active  { color:#912 }
 div#buffer a:visited { color:#74A }
+body.darkmode div#buffer { border-color:#DDD; background-color:#333; }
 
 div#buffer button {
   cursor:pointer;

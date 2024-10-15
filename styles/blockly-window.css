@@ -32,6 +32,21 @@ button#copy-code-button {
 button#copy-code-button:hover  { background-color:#DDD; }
 button#copy-code-button:active { background-color:#569; color:#FFF; }
 
+body.darkmode button#copy-code-button {
+  background-color:#333;
+  color:#DDD;
+  border-color:#DDD;
+}
+
+body.darkmode button#copy-code-button:hover {
+  background-color:#777;
+}
+
+body.darkmode button#copy-code-button:active {
+  background-color:#569;
+  color:#333;
+}
+
 td#canvas {
   width:70%;
 }
