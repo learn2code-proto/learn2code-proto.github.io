@@ -80,8 +80,7 @@ const spinForTime = {
       .appendField(new Blockly.FieldTextInput('name'), 'name')
       .appendField('at')
       .appendField(new Blockly.FieldNumber(100, -100, 100, 0.1), 'power')
-      .appendField('power')
-      .appendField('for')
+      .appendField('power for')
       .appendField(new Blockly.FieldNumber(0, 0, Infinity, 0.01), 'time')
       .appendField('seconds');
     this.setPreviousStatement(true, null);

@@ -19,11 +19,15 @@ ul#nav li {
   display:inline;
 
   border-right:1px solid var(--bg-1);
-  padding:0px 8px;
+  padding:0px 4px 0px 8px;
 }
 
 ul#nav li:first-child,
 ul#nav li:last-child   { border-right:none; }
+
+ul#nav button {
+  margin-left:4px;
+}
 
 ul#nav img {
   height:16px;

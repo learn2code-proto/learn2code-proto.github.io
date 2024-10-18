@@ -13,10 +13,10 @@
 }
 
 :root.darkmode {
-  --fg-1:#FFF;
-  --fg-2:#DDD;
-  --bg-1:#333;
-  --bg-2:#555;
+  --fg-1:#CCE;
+  --fg-2:#EEF;
+  --bg-1:#223;
+  --bg-2:#445;
 }
 
 body {
