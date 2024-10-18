@@ -4,7 +4,7 @@
 
 :root {
   --fg-1:#333;
-  --fg-2:#555;
+  --fg-2:#444;
   --bg-1:#DDD;
   --bg-2:#FFF;
   --primary:#C44;
@@ -13,10 +13,10 @@
 }
 
 :root.darkmode {
-  --fg-1:#CCE;
-  --fg-2:#EEF;
-  --bg-1:#223;
-  --bg-2:#445;
+  --fg-1:#DDD;
+  --fg-2:#FFF;
+  --bg-1:#333;
+  --bg-2:#444;
 }
 
 body {

@@ -1,5 +1,7 @@
 import "./definitions.js"
 import "./generators.js"
+import { root } from './core.js';
+import { darkTheme, modernTheme } from './from-blockly/themes.js';
 
 const toolbox = {
   kind: 'categoryToolbox',
@@ -137,6 +139,7 @@ const toolbox = {
 };
 
 var workspace = Blockly.inject('editor', {
+  theme: modernTheme,
   toolbox: toolbox,
 });
 
@@ -146,6 +149,8 @@ const supportedEvents = new Set([
   Blockly.Events.BLOCK_DELETE,
   Blockly.Events.BLOCK_MOVE,
 ]);
+
+workspace.addChangeListener(updateCode);
 
 function updateCode(event) {
   // Updates the code displayed in `code-container`.
@@ -164,4 +169,18 @@ function updateCode(event) {
   );
 }
 
-workspace.addChangeListener(updateCode);
+const darkmodeObserver = new MutationObserver(mutations => {
+  // Watches for changes in the class list of `:root` (specifically the
+  // darkmode class) so that the blockly instance retains the accurate theme.
+  mutations.forEach(mutation => {
+    if (mutation.type != 'attributes' || mutation.attributeName != 'class')
+      return;
+
+    if (mutation.target.classList.contains('darkmode'))
+      workspace.setTheme(darkTheme);
+    else 
+      workspace.setTheme(modernTheme);
+  });
+});
+
+darkmodeObserver.observe(root, { attributes: true });
