@@ -7,27 +7,23 @@ ul#nav {
 
   list-style-type:none;
 
-  background-color:#333;
-  color:#DDD;
+  background-color:var(--fg-1);
+  color:var(--bg-1);
 
   padding:16px 16px;
   margin:0px;
 }
 
-body.darkmode ul#nav { background-color:#DDD; }
-
 ul#nav li {
   text-align:center;
   display:inline;
 
-  border-right:1px solid #DDD;
+  border-right:1px solid var(--bg-1);
   padding:0px 8px;
 }
 
 ul#nav li:first-child,
 ul#nav li:last-child   { border-right:none; }
-
-body.darkmode ul#nav li { border-color:#333; }
 
 ul#nav img {
   height:16px;
@@ -36,36 +32,25 @@ ul#nav img {
 ul#nav a {
   text-decoration:none;
 
-  color:#DDD;
+  color:var(--bg-1);
 
   padding:4px;
 }
 
-ul#nav a:hover { color:#569; }
-body.darkmode ul#nav a { color:#333; }
+ul#nav a:hover { color:var(--secondary); }
 
 ul#nav button#darkmode-button {
-  border:1px solid #DDD;
+  border:1px solid var(--bg-1);
   border-radius:8px;
 
   background-color:transparent;
-  color:#DDD;
+  color:var(--bg-1);
 
   padding:2px 8px;
 }
 
-ul#nav button#darkmode-button:hover  { background-color:#555; }
-ul#nav button#darkmode-button:active { background-color:#569; color:#333; }
-
-body.darkmode ul#nav button#darkmode-button {
-  background-color:#DDD;
-  color:#333;
-  border-color:#333;
-}
-
-body.darkmode ul#nav button#darkmode-button:hover { background-color:#BBB; }
-
-body.darkmode ul#nav button#darkmode-button:active {
-  background-color:#569;
-  color:#DDD;
+ul#nav button#darkmode-button:hover  { background-color:var(--fg-2); }
+ul#nav button#darkmode-button:active {
+  background-color:var(--secondary);
+  color:var(--fg-1);
 }

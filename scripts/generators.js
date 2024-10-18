@@ -22,18 +22,18 @@ python.pythonGenerator.forBlock['largemotor'] = function (block) {
 
 python.pythonGenerator.forBlock['spin'] = function (block) {
   const text_name = block.getFieldValue('name');
-  const number_speed = block.getFieldValue('speed');
+  const number_power = block.getFieldValue('power');
 
-  const code = `${text_name.replace(' ', '_')}.spin(speed=${number_speed})\n`;
+  const code = `${text_name.replace(' ', '_')}.spin(power=${number_power})\n`;
   return code;
 }
 
 python.pythonGenerator.forBlock['spinForTime'] = function (block) {
   const text_name = block.getFieldValue('name');
-  const number_speed = block.getFieldValue('speed');
+  const number_power = block.getFieldValue('power');
   const number_time = block.getFieldValue('time');
 
-  const code = `${text_name.replace(' ', '_')}.spin(speed=${number_speed}, seconds=${number_time})\n`;
+  const code = `${text_name.replace(' ', '_')}.spin(power=${number_power}, seconds=${number_time})\n`;
   return code;
 }
 

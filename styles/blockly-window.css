@@ -19,32 +19,21 @@ table#blockly-window td {
 }
 
 button#copy-code-button {
-  border:1px solid #333;
+  border:1px solid var(--fg-1);
   border-radius:8px;
 
-  background-color:#FFF;
+  background-color:var(--bg-2);
+  color:var(--fg-1);
 
   float:right;
 
   padding:2px 8px;
 }
 
-button#copy-code-button:hover  { background-color:#DDD; }
-button#copy-code-button:active { background-color:#569; color:#FFF; }
-
-body.darkmode button#copy-code-button {
-  background-color:#333;
-  color:#DDD;
-  border-color:#DDD;
-}
-
-body.darkmode button#copy-code-button:hover {
-  background-color:#555;
-}
-
-body.darkmode button#copy-code-button:active {
-  background-color:#569;
-  color:#333;
+button#copy-code-button:hover  { background-color:var(--bg-1); }
+button#copy-code-button:active {
+  background-color:var(--secondary);
+  color:var(--bg-2);
 }
 
 td#canvas {
