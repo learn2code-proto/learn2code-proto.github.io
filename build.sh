@@ -7,7 +7,7 @@
 set -eu
 
 PAGE_DIR='./pages'
-HOME_TITLE='Block Coding Demo'  # for `index.html`
+HOME_TITLE='PROTO - Block Coding'  # for `index.html`
 
 [ ! -d "$PAGE_DIR" ]             && echo 'pages directory not found' && exit 1
 [ ! -f "$PAGE_DIR/layout.html" ] && echo 'layout could not be found' && exit 2
