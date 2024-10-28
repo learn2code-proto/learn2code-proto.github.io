@@ -18,17 +18,17 @@ function updateTheme() {
         { logic_blocks:
           { colourPrimary: c_magenta
           , colourSecondary: c_bg2
-          , colourTertiary: c_fg2
+          , colourTertiary: c_bg2
           }
         , loop_blocks:
           { colourPrimary: c_magenta
           , colourSecondary: c_bg2
-          , colourTertiary: c_fg2
+          , colourTertiary: c_bg2
           }
         , math_blocks:
-          { colourPrimary: c_cyan
+          { colourPrimary: c_magenta
           , colourSecondary: c_bg2
-          , colourTertiary: c_fg2
+          , colourTertiary: c_bg2
           }
         }
       , categoryStyles:  // Only for predefined categories.
@@ -39,7 +39,7 @@ function updateTheme() {
           { colour: c_magenta
           }
         , math_category:
-          { colour: c_cyan
+          { colour: c_magenta
           }
         }
       , componentStyles:

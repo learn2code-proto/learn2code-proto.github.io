@@ -1,9 +1,9 @@
-import  "./definitions.js"
-import  "./generators.js"
+import  "./block-definitions.js"
+import  "./block-generators.js"
 import  { root
         , c_red, c_green, c_blue, c_magenta
         , updateColors } from './core.js';
-import  { theme, updateTheme } from './themes.js';
+import  { theme, updateTheme } from './blockly-themes.js';
 
 const toolbox = {
   kind: 'categoryToolbox',
