@@ -24,7 +24,7 @@ const smallmotor = {
     this.setNextStatement(true, null);
     this.setTooltip('Creates a smallmotor');
     this.setHelpUrl('');
-    this.setColour(225);
+    this.setColour(0);
   }
 };
 
@@ -49,7 +49,7 @@ const largemotor = {
     this.setNextStatement(true, null);
     this.setTooltip('Creates a largemotor');
     this.setHelpUrl('');
-    this.setColour(225);
+    this.setColour(0);
   }
 };
 
@@ -67,7 +67,7 @@ const spin = {
     this.setNextStatement(true, null);
     this.setTooltip('Spins the motor at a power until stopped.');
     this.setHelpUrl('');
-    this.setColour(225);
+    this.setColour(0);
   }
 };
 
@@ -87,7 +87,7 @@ const spinForTime = {
     this.setNextStatement(true, null);
     this.setTooltip('Spins the motor at a power for a time.');
     this.setHelpUrl('');
-    this.setColour(225);
+    this.setColour(0);
   }
 };
 
@@ -102,7 +102,7 @@ const stop = {
     this.setNextStatement(true, null);
     this.setTooltip('Stops the motor.');
     this.setHelpUrl('');
-    this.setColour(225);
+    this.setColour(0);
   }
 };
 
@@ -126,7 +126,7 @@ const button = {
     this.setNextStatement(true, null);
     this.setTooltip('Creates a button');
     this.setHelpUrl('');
-    this.setColour(225);
+    this.setColour(120);
   }
 };
 
@@ -140,7 +140,7 @@ const isPressed = {
     this.setOutput(true, 'Boolean');
     this.setTooltip('Returns whether or not the button is pressed.');
     this.setHelpUrl('');
-    this.setColour(345);
+    this.setColour(120);
   }
 };
 
@@ -156,8 +156,23 @@ const wait = {
     this.setNextStatement(true, null);
     this.setTooltip('Waits for the number of seconds.');
     this.setHelpUrl('');
-    this.setColour(225);
+    this.setColour(240);
   }
 };
 
 Blockly.common.defineBlocks({ wait: wait });
+
+const until = {
+  init: function () {
+    this.appendValueInput('function')
+      .setCheck('Boolean')
+      .appendField('wait until');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Waits until the given action is true.');
+    this.setHelpUrl('');
+    this.setColour(240);
+  }
+};
+
+Blockly.common.defineBlocks({ until: until });

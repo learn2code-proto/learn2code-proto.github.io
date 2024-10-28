@@ -7,9 +7,16 @@
   --fg-2:#444;
   --bg-1:#DDD;
   --bg-2:#FFF;
-  --primary:#C44;
-  --secondary:#569;
-  --tertiary:#FFFDD0;
+
+  --primary:var(--red);
+  --secondary:var(--blue);
+
+  --red:#C44;
+  --green:#4C4;
+  --blue:#44C;
+  --cyan:#4CC;
+  --yellow:#CC4;
+  --magenta:#C4C;
 }
 
 :root.darkmode {
@@ -79,7 +86,7 @@ div#snackbar {
   text-align:center;
 
   background-color:var(--primary);
-  color:var(--fg-1);
+  color:var(--bg-1);
 
   border-radius:8px;
 

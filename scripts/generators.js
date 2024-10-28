@@ -57,7 +57,6 @@ python.pythonGenerator.forBlock['isPressed'] = function (block) {
   const text_name = block.getFieldValue('name');
 
   const code = `${text_name.replace(' ', '_')}.pressed()`;
-  // TODO: Change Order.NONE to the correct operator precedence strength
   return [code, python.Order.NONE];
 }
 
@@ -65,5 +64,26 @@ python.pythonGenerator.forBlock['wait'] = function (block) {
   const number_time = block.getFieldValue('time');
 
   const code = `make.wait(seconds=${number_time})\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['until'] = function (block) {
+  var value_function = python.pythonGenerator.valueToCode
+    ( block
+    , 'function'
+    , python.Order.ATOMIC
+    );
+
+  let len = value_function.length;
+  let functionText;
+  
+  if (len < 4)
+    functionText = '()';
+  else if (value_function[len - 3] == '(' && value_function[len - 2] == ')')
+    functionText = value_function.replace('()', '');
+  else
+    functionText = `(lambda: ${value_function})`
+
+  const code = `make.until${functionText}\n`;
   return code;
 }
