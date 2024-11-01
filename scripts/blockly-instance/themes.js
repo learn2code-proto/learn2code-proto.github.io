@@ -2,7 +2,7 @@ import  { c_fg1,  c_fg2
         , c_bg1,  c_bg2
         , c_red,  c_green,  c_blue
         , c_cyan, c_yellow, c_magenta
-        } from './core.js';
+        } from '../core.js';
 export  { theme, updateTheme };
 
 var theme;

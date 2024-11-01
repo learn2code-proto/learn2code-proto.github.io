@@ -1,121 +1,155 @@
 @import './nav.css';
-@import './blockly-window.css';
-@import './line-editor.css';
 
 :root {
-  --fg-1:#333;
-  --fg-2:#444;
-  --bg-1:#DDD;
-  --bg-2:#FFF;
+  --fg-1: #333;
+  --fg-2: #444;
+  --bg-1: #DDD;
+  --bg-2: #FFF;
 
-  --primary:var(--red);
-  --secondary:var(--blue);
+  --primary: var(--red);
+  --secondary: var(--blue);
 
-  --red:#C44;
-  --green:#4C4;
-  --blue:#44C;
-  --cyan:#4CC;
-  --yellow:#CC4;
-  --magenta:#C4C;
+  --red: #C44;
+  --green: #4C4;
+  --blue: #44C;
+  --cyan: #4CC;
+  --yellow: #CC4;
+  --magenta: #C4C;
 }
 
 :root.darkmode {
-  --fg-1:#DDD;
-  --fg-2:#FFF;
-  --bg-1:#333;
-  --bg-2:#444;
+  --fg-1: #DDD;
+  --fg-2: #FFF;
+  --bg-1: #333;
+  --bg-2: #444;
 }
 
 body {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
-  background-color:var(--bg-1);
-  color:var(--fg-1);
+  background-color: var(--bg-1);
+  color: var(--fg-1);
 }
 
 div#buffer {
-  border:2px solid var(--fg-1);
-  border-radius:8px;
+  border: 2px solid var(--fg-1);
+  border-radius: 8px;
 
-  background-color:var(--bg-2);
+  background-color: var(--bg-2);
 
-  margin:64px auto;
-  padding:16px;
+  margin: 64px auto;
+  padding: 16px;
 
-  width:fit-content;
+  width: fit-content;
 }
 
-div#buffer a         { color:#569 }
-div#buffer a:active  { color:#912 }
-div#buffer a:visited { color:#74A }
+div#buffer a {
+  color: #569
+}
+
+div#buffer a:active {
+  color: #912
+}
+
+div#buffer a:visited {
+  color: #74A
+}
 
 div#buffer button {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 div#buffer h1 {
-  padding:0px 0px 16px 0px;
-  margin:auto;
+  padding: 0px 0px 16px 0px;
+  margin: auto;
 
-  text-align:center;
+  text-align: center;
 }
 
 div#buffer p {
-  padding:16px 8px;
-  margin:auto;
+  padding: 16px 8px;
+  margin: auto;
 
-  max-width:1024px;
-  width:60vw;
-  min-width:512px;
+  max-width: 1024px;
+  width: 60vw;
+  min-width: 512px;
 
-  text-indent:32px;
-  font-size:14pt;
+  text-indent: 32px;
+  font-size: 14pt;
 }
 
 div#snackbar {
-  visibility:hidden;
+  visibility: hidden;
 
-  padding:8px 16px;
-  margin:0px auto;
-  bottom:10vh;
+  padding: 8px 16px;
+  margin: 0px auto;
+  bottom: 10vh;
 
-  width:fit-content;
-  text-align:center;
+  width: fit-content;
+  text-align: center;
 
-  background-color:var(--primary);
-  color:var(--bg-1);
+  background-color: var(--primary);
+  color: var(--bg-1);
 
-  border-radius:8px;
+  border-radius: 8px;
 
-  position:sticky;
-  z-index:1001;
+  position: sticky;
+  z-index: 1001;
 }
 
 div#snackbar.view {
-  visibility:visible;
-  -webkit-animation:fadein 0.5s, fadeout 0.5s, 3s;
-  animation:fadein 0.5s, fadeout 0.5s 3s;
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s, 3s;
+  animation: fadein 0.5s, fadeout 0.5s 3s;
 }
 
 @-webkit-keyframes fadein {
-  from {bottom:0; opacity:0;}
-  to {bottom:10vh; opacity:1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 10vh;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom:10vh; opacity:1;}
-  to {bottom:0; opacity:0;}
+  from {
+    bottom: 10vh;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadein {
-  from {bottom:0; opacity:0;}
-  to {bottom:10vh; opacity:1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 10vh;
+    opacity: 1;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom:10vh; opacity:1;}
-  to {bottom:0; opacity:0;}
+  from {
+    bottom: 10vh;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

@@ -21,7 +21,7 @@ WARNING () {    # prints a warning to stdout intended to be a HTML header
 
 Generated from a preset layout on $(date -Iseconds).
 For source files, look under \`$PAGE_DIR\` directory.
-Build with \`build.sh\`.
+Built with \`build.sh\`.
 --------------------------------------------------------------------------- -->
 EOF
 }

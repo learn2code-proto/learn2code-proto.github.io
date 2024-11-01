@@ -1,4 +1,4 @@
-import "./blockly-instance.js";
+import "./blockly-instance/core.js";
 import { displayOnSnackbar } from './core.js';
 
 const copyCodeButton = document.getElementById('copy-code-button');
