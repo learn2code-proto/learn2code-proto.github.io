@@ -1,4 +1,6 @@
 const codeInput = document.getElementById('code-input');
+const suggestionBox = document.getElementById('suggestion-box');
+
 const keywords = [
   ".wait(",
   ".until(",
@@ -13,19 +15,6 @@ const keywords = [
   ".turn(",
   ".curve("
 ];
-
-// Create autocomplete suggestion box
-const suggestionBox = document.createElement('div');
-suggestionBox.id = 'suggestion-box';
-suggestionBox.style.position = 'absolute';
-suggestionBox.style.backgroundColor = '#f9f9f9';
-suggestionBox.style.border = '1px solid #ccc';
-suggestionBox.style.zIndex = '1000';
-suggestionBox.style.display = 'none';
-suggestionBox.style.padding = '5px';
-suggestionBox.style.maxWidth = '300px';
-suggestionBox.style.fontFamily = 'monospace';
-document.body.appendChild(suggestionBox);
 
 // Syncing the typed input with Prism.js highlighting
 codeInput.addEventListener('input', () => {
