@@ -37,6 +37,45 @@ const toolbox = {
     },
     {
       kind: 'category',
+      name: 'Drivetrain',
+      colour: c_red,
+      contents: [
+        {
+          kind: 'block',
+          type: 'drivetrain',
+        },
+        {
+          kind: 'block',
+          type: 'drive',
+        },
+        {
+          kind: 'block',
+          type: 'driveForTime',
+        },
+        {
+          kind: 'block',
+          type: 'curve',
+        },
+        {
+          kind: 'block',
+          type: 'curveForTime',
+        },
+        {
+          kind: 'block',
+          type: 'turn',
+        },
+        {
+          kind: 'block',
+          type: 'turnForTime',
+        },
+        {
+          kind: 'block',
+          type: 'stop',
+        },
+      ],
+    },
+    {
+      kind: 'category',
       name: 'Sensors',
       colour: c_green,
       contents: [

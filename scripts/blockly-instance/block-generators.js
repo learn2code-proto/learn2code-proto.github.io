@@ -1,62 +1,127 @@
 python.pythonGenerator.forBlock['smallmotor'] = function (block) {
-  const text_name = block.getFieldValue('name');
+  const text_name = block.getFieldValue('name').replace(' ', '_');
 
   const dropdown_port = block.getFieldValue('port');
   const dropdown_direction = block.getFieldValue('direction');
 
   const directionSnippet = (dropdown_direction == 1) ? '' : ', direction=-1';
-  const code = `${text_name.replace(' ', '_')} = make.smallmotor(port=${dropdown_port}${directionSnippet})\n`;
+  const code = `${text_name} = make.smallmotor(port=${dropdown_port}${directionSnippet})\n`;
   return code;
 }
 
 python.pythonGenerator.forBlock['largemotor'] = function (block) {
-  const text_name = block.getFieldValue('name');
+  const text_name = block.getFieldValue('name').replace(' ', '_');
 
   const dropdown_port = block.getFieldValue('port');
   const dropdown_direction = block.getFieldValue('direction');
 
   const directionSnippet = (dropdown_direction == 1) ? '' : ', direction=-1';
-  const code = `${text_name.replace(' ', '_')} = make.largemotor(port=${dropdown_port}${directionSnippet})\n`;
+  const code = `${text_name} = make.largemotor(port=${dropdown_port}${directionSnippet})\n`;
   return code;
 }
 
 python.pythonGenerator.forBlock['spin'] = function (block) {
-  const text_name = block.getFieldValue('name');
+  const text_name = block.getFieldValue('name').replace(' ', '_');
   const number_power = block.getFieldValue('power');
 
-  const code = `${text_name.replace(' ', '_')}.spin(power=${number_power})\n`;
+  const code = `${text_name}.spin(power=${number_power})\n`;
   return code;
 }
 
 python.pythonGenerator.forBlock['spinForTime'] = function (block) {
-  const text_name = block.getFieldValue('name');
+  const text_name = block.getFieldValue('name').replace(' ', '_');
   const number_power = block.getFieldValue('power');
   const number_time = block.getFieldValue('time');
 
-  const code = `${text_name.replace(' ', '_')}.spin(power=${number_power}, seconds=${number_time})\n`;
+  const code = `${text_name}.spin(power=${number_power}, seconds=${number_time})\n`;
   return code;
 }
 
 python.pythonGenerator.forBlock['stop'] = function (block) {
-  const text_name = block.getFieldValue('name');
+  const text_name = block.getFieldValue('name').replace(' ', '_');
 
-  const code = `${text_name.replace(' ', '_')}.stop()\n`;
+  const code = `${text_name}.stop()\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['drivetrain'] = function (block) {
+  const text_name = block.getFieldValue('name').replace(' ', '_');
+
+  const text_left = block.getFieldValue('left').replace(' ', '_');
+  const text_right = block.getFieldValue('right').replace(' ', '_');
+  const dropdown_direction = block.getFieldValue('direction');
+
+  const directionSnippet = (dropdown_direction == 1) ? '' : ', direction=-1';
+  const code = `${text_name} = make.largemotor(${text_left}, ${text_right}${directionSnippet})\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['drive'] = function (block) {
+  const text_name = block.getFieldValue('name').replace(' ', '_');
+  const number_power = block.getFieldValue('power');
+
+  const code = `${text_name}.drive(power=${number_power})\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['driveForTime'] = function (block) {
+  const text_name = block.getFieldValue('name').replace(' ', '_');
+  const number_power = block.getFieldValue('power');
+  const number_time = block.getFieldValue('time');
+
+  const code = `${text_name}.drive(power=${number_power}, seconds=${number_time})\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['curve'] = function (block) {
+  const text_name = block.getFieldValue('name').replace(' ', '_');
+  const number_left = block.getFieldValue('left');
+  const number_right = block.getFieldValue('right');
+
+  const code = `${text_name}.curve(left_power=${number_left}, right_power=${number_right})\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['curveForTime'] = function (block) {
+  const text_name = block.getFieldValue('name').replace(' ', '_');
+  const number_left = block.getFieldValue('left');
+  const number_right = block.getFieldValue('right');
+  const number_time = block.getFieldValue('time');
+
+  const code = `${text_name}.curve(left_power=${number_left}, right_power=${number_right}, seconds=${number_time})\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['turn'] = function (block) {
+  const text_name = block.getFieldValue('name').replace(' ', '_');
+  const number_power = block.getFieldValue('power');
+
+  const code = `${text_name}.turn(power=${number_power})\n`;
+  return code;
+}
+
+python.pythonGenerator.forBlock['turnForTime'] = function (block) {
+  const text_name = block.getFieldValue('name').replace(' ', '_');
+  const number_power = block.getFieldValue('power');
+  const number_time = block.getFieldValue('time');
+
+  const code = `${text_name}.turn(power=${number_power}, seconds=${number_time})\n`;
   return code;
 }
 
 python.pythonGenerator.forBlock['button'] = function (block) {
-  const text_name = block.getFieldValue('name');
+  const text_name = block.getFieldValue('name').replace(' ', '_');
 
   const dropdown_port = block.getFieldValue('port');
 
-  const code = `${text_name.replace(' ', '_')} = make.button(port=${dropdown_port})\n`;
+  const code = `${text_name} = make.button(port=${dropdown_port})\n`;
   return code;
 }
 
 python.pythonGenerator.forBlock['isPressed'] = function (block) {
-  const text_name = block.getFieldValue('name');
+  const text_name = block.getFieldValue('name').replace(' ', '_');
 
-  const code = `${text_name.replace(' ', '_')}.pressed()`;
+  const code = `${text_name}.pressed()`;
   return [code, python.Order.NONE];
 }
 
