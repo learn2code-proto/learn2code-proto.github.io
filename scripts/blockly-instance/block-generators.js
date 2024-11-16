@@ -149,6 +149,6 @@ python.pythonGenerator.forBlock['until'] = function (block) {
   else
     functionText = `(lambda: ${value_function})`
 
-  const code = `make.until${functionText}\n`;
+  const code = `make.wait_until${functionText}\n`;
   return code;
 }
