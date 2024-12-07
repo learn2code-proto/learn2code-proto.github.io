@@ -52,7 +52,7 @@ python.pythonGenerator.forBlock['drivetrain'] = function (block) {
   const dropdown_direction = block.getFieldValue('direction');
 
   const directionSnippet = (dropdown_direction == 1) ? '' : ', direction=-1';
-  const code = `${text_name} = make.largemotor(${text_left}, ${text_right}${directionSnippet})\n`;
+  const code = `${text_name} = make.drivetrain(${text_left}, ${text_right}${directionSnippet})\n`;
   return code;
 }
 
@@ -141,7 +141,7 @@ python.pythonGenerator.forBlock['until'] = function (block) {
 
   let len = value_function.length;
   let functionText;
-  
+
   if (len < 4)
     functionText = '()';
   else if (value_function[len - 3] == '(' && value_function[len - 2] == ')')
