@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>PROTO</title>
+    <meta name="author" content="Carston Wiebe (cwiebe3@huskers.unl.edu)" />
+    <meta name="description" content="Block and line coding website for PROTO at the University of Nebraska-Lincoln" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Blockly. -->
+    <script type="text/javascript" defer="" src="./deps/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" defer="" src="./deps/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" defer="" src="./deps/blockly/python_compressed.js"></script>
+    <script type="text/javascript" defer="" src="./deps/blockly/en.js"></script>
+    <!-- Prism. -->
+    <link type="text/css" rel="stylesheet" href="./deps/prism/prism.css" />
+    <script type="text/javascript" defer="" src="./deps/prism/prism.js"></script>
+    <!-- CodeMirror. -->
+    <link type="text/css" rel="stylesheet" href="./deps/codemirror/codemirror.css" />
+    <link type="text/css" rel="stylesheet" href="./deps/codemirror/show-hint.css" />
+    <script type="text/javascript" defer="" src="./deps/codemirror/codemirror.js"></script>
+    <script type="text/javascript" defer="" src="./deps/codemirror/show-hint.js"></script>
+    <!-- Local. -->
+    <link type="image/x-icon" rel="icon" href="./images/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="./index.xhtml.css" />
+    <script type="text/javascript" src="./index.xhtml.pre.js"></script>
+    <script type="module" src="./index.xhtml.post.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <a href="https://proto.unl.edu/" target="_blank">UNL Website</a>
+    </nav>
+
+    <header>
+      <h1>Block Coding</h1>
+    </header>
+
+    <main>
+      <span id="block-editor">
+        <section id="blockly-canvas"></section>
+
+        <section id="line-preview">
+          <h2>Preview</h2>
+          <code><pre id="line-preview-text"></pre></code>
+        </section>
+      </span>
+
+      <span id="line-editor">
+
+      </span>
+    </main>
+
+    <footer>
+      PROTO: Promoting Robotics Opportunity Through Outreach
+      <br />
+      University of Nebraska-Lincoln
+      <br />
+      <a href="mailto:proto@unl.edu" target="_blank">Contact Us</a>
+    </footer>
+  </body>
+</html>
