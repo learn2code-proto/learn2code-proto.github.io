@@ -32,34 +32,57 @@
 
   <body>
     <nav>
-      <a href="https://proto.unl.edu/" target="_blank">UNL Website</a>
+      <a href="https://proto.unl.edu"
+         title="https://proto.unl.edu"
+         target="_blank">PROTO UNL Website</a>
+      <a href="https://github.com/ctwiebe23/PROTO"
+         title="https://github.com/ctwiebe23/PROTO"
+         target="_blank">MAKE Source</a>
+      <a href="https://github.com/learn2code-proto/learn2code-proto.github.io"
+         title="https://github.com/learn2code-proto/learn2code-proto.github.io"
+         target="_blank">learn2code Source</a>
     </nav>
 
     <header>
       <h1>Block Coding</h1>
+      Drag blocks from the left-most column into the middle column.  A preview
+      of your code will appear on the right.
     </header>
 
     <main>
+      <span id="window-size-error">
+        <h2>ERROR: Screen Too Small</h2>
+        This application requires a larger screen to properly render content.
+        Please rotate your device, increase the window size, or move to a
+        different platform.
+      </span>
+
       <span id="block-editor">
         <section id="blockly-canvas"></section>
 
         <section id="line-preview">
-          <h2>Preview</h2>
-          <code><pre id="line-preview-text"></pre></code>
+          <button onclick="copyText(linepreviewtext)" popovertarget="copy-dialog">
+            Copy Code
+          </button>
+          <pre><code id="linepreviewtext"></code></pre>
         </section>
       </span>
 
-      <span id="line-editor">
+      <span id="line-editor" hidden="">
 
       </span>
     </main>
 
     <footer>
-      PROTO: Promoting Robotics Opportunity Through Outreach
+      PROTO: Promoting Robotics Opportunity Through Outreach | University of
+      Nebraska-Lincoln
       <br />
-      University of Nebraska-Lincoln
-      <br />
-      <a href="mailto:proto@unl.edu" target="_blank">Contact Us</a>
+      <a href="mailto:proto@unl.edu"
+         title="mailto:proto@unl.edu">Contact Us</a>
     </footer>
+
+    <dialog id="copy-dialog" class="snackbar" popover="">
+      Copied text to clipboard!
+    </dialog>
   </body>
 </html>
