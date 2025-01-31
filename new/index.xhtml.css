@@ -209,7 +209,7 @@ span#window-size-error h2 {
 
 @media (max-width:512px) {
   span#window-size-error {
-    display:inline;
+    display:block;
   }
 }
 
