@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <title>PROTO</title>
+    <meta name="application-name" content="PROTO Block coding" />
     <meta name="author" content="Carston Wiebe (cwiebe3@huskers.unl.edu)" />
     <meta name="description" content="Block and line coding website for PROTO at the University of Nebraska-Lincoln" />
     <meta name="color-scheme" content="light dark" />
@@ -16,7 +17,7 @@
     <script type="text/javascript" defer="" src="./deps/blockly/python_compressed.js"></script>
     <script type="text/javascript" defer="" src="./deps/blockly/en.js"></script>
     <!-- Prism. -->
-    <link type="text/css" rel="stylesheet" href="./deps/prism/prism.css" />
+    <link type="text/css" rel="stylesheet" href="./deps/prism/prism-tomorrow-night.min.css" />
     <script type="text/javascript" defer="" src="./deps/prism/prism.js"></script>
     <!-- CodeMirror. -->
     <link type="text/css" rel="stylesheet" href="./deps/codemirror/codemirror.css" />
@@ -61,11 +62,10 @@
         <section id="blockly-canvas"></section>
 
         <section id="line-preview">
-          <button onclick="copyText(linepreviewtext)"
-                  popovertarget="copy-dialog">
+          <button onclick="copyText(linepreviewtext)">
             Copy Code
           </button>
-          <pre><code id="linepreviewtext"></code></pre>
+          <pre><code id="linepreviewtext" class="language-python"></code></pre>
         </section>
       </span>
 
@@ -82,9 +82,5 @@
       <a href="mailto:proto@unl.edu"
          title="mailto:proto@unl.edu">Contact Us</a>
     </footer>
-
-    <dialog id="copy-dialog" class="snackbar" popover="">
-      Copied text to clipboard!
-    </dialog>
   </body>
 </html>

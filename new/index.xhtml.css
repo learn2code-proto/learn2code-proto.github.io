@@ -116,33 +116,6 @@ button:active {
   border-color:var(--proto-bg-2);
 }
 
-dialog {
-  position:absolute;
-  top:16px;
-  left:16px;
-
-  padding:4px 8px;
-  color:var(--proto-text);
-  background-color:var(--proto-primary);
-
-  border:none;
-  border-radius:4px;
-}
-
-dialog.snackbar {
-  animation:hideAnimation 0s ease-in 3s;
-  animation-fill-mode:forwards;
-}
-
-@keyframes hideAnimation {
-  to {
-    visibility:hidden;
-
-    width:0px;
-    height:0px;
-  }
-}
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * link
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -268,15 +241,23 @@ section#line-preview {
   grid-area:code;
   min-height:256px;
 
+  display:grid;
+
+  grid-template:
+    "btn" min-content
+    "cod" 1fr
+  / 1fr;
+
   overflow:auto;
   padding:8px;
   background-color:var(--proto-bg-2);
 }
 
 section#line-preview button {
-  float:right;
+  grid-area:btn;
 }
 
 code#linepreviewtext {
+  grid-area:cod;
   font:10pt var(--proto-font-monospace);
 }
