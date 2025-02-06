@@ -48,6 +48,10 @@
       <h1>Block Coding</h1>
       Drag blocks from the left-most column into the middle column.  A preview
       of your code will appear on the right.
+      <br />
+      <button onclick="switchEditor()">
+        Change Mode
+      </button>
     </header>
 
     <main>
@@ -62,15 +66,15 @@
         <section id="blockly-canvas"></section>
 
         <section id="line-preview">
-          <button onclick="copyText(linepreviewtext)">
+          <pre><code id="line-preview-text" class="language-python"></code></pre>
+          <button onclick="copyText(document.getElementById('line-preview-text'))">
             Copy Code
           </button>
-          <pre><code id="linepreviewtext" class="language-python"></code></pre>
         </section>
       </span>
 
-      <span id="line-editor" hidden="">
-
+      <span id="line-editor" data-closed="">
+        LINE EDITOR HERE
       </span>
     </main>
 

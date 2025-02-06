@@ -22,7 +22,7 @@ workspace.addChangeListener((event) => {
     return;
 
   const code = python.pythonGenerator.workspaceToCode(workspace);
-  const codeContainer = document.getElementById('linepreviewtext');
+  const codeContainer = document.getElementById('line-preview-text');
 
   codeContainer.innerHTML = Prism.highlight
     ( 'import make\n\n' + code

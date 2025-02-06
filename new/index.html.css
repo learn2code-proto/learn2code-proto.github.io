@@ -154,6 +154,10 @@ main {
   grid-area:main;
 }
 
+span[data-closed] {
+  display:none;
+}
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * info
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -204,6 +208,10 @@ span#block-editor {
   min-height:512px;
 }
 
+span#block-editor[data-closed] {
+  display:none;
+}
+
 @media (max-width:800px) {
   span#block-editor {
     grid-template-areas:
@@ -244,8 +252,8 @@ section#line-preview {
   display:grid;
 
   grid-template:
-    "btn" min-content
     "cod" 1fr
+    "btn" min-content
   / 1fr;
 
   overflow:auto;
@@ -257,7 +265,7 @@ section#line-preview button {
   grid-area:btn;
 }
 
-code#linepreviewtext {
+code#line-preview-text {
   grid-area:cod;
   font:10pt var(--proto-font-monospace);
 }
