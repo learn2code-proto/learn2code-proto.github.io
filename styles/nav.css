@@ -19,16 +19,15 @@ ul#nav li {
   display: inline;
 
   border-right: 1px solid var(--bg-1);
-  padding: 0px 4px 0px 8px;
+  padding: 0px 8px 0px 4px;
+  /*
+  WHY??? EXPLAIN THE PADDING ABOVE
+  */
 }
 
 ul#nav li:first-child,
 ul#nav li:last-child {
   border-right: none;
-}
-
-ul#nav button {
-  margin-left: 4px;
 }
 
 ul#nav img {
@@ -64,4 +63,47 @@ ul#nav button#darkmode-button:hover {
 ul#nav button#darkmode-button:active {
   background-color: var(--secondary);
   color: var(--fg-1);
+}
+
+ul#nav button#copy-code-button {
+  border: 1px solid var(--bg-1);
+  border-radius: 8px;
+
+  background-color: transparent;
+  color: var(--bg-1);
+
+  padding: 2px 8px;
+}
+
+ul#nav button#copy-code-button:hover {
+  background-color: var(--fg-2);
+}
+
+ul#nav button#copy-code-button:active {
+  background-color: var(--secondary);
+  color: var(--fg-1);
+}
+
+ul#nav button#save-code-button {
+  border: 1px solid var(--bg-1);
+  border-radius: 8px;
+
+  background-color: transparent;
+  color: var(--bg-1);
+
+  padding: 2px 8px;
+}
+
+ul#nav button#save-code-button:hover {
+  background-color: var(--fg-2);
+}
+
+ul#nav button#save-code-button:active {
+  background-color: var(--secondary);
+  color: var(--fg-1);
+}
+
+ul#nav button {
+  margin-left: 0px;
+  border-left: none;
 }
