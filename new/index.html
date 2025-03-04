@@ -67,9 +67,14 @@
 
         <section id="line-preview">
           <pre><code id="line-preview-text" class="language-python"></code></pre>
-          <button onclick="copyText(document.getElementById('line-preview-text'))">
-            Copy Code
-          </button>
+          <span id="line-preview-buttons">
+            <button onclick="copyText(document.getElementById('line-preview-text'))">
+              Copy code
+            </button>
+            <button onclick="saveText(document.getElementById('line-preview-text'))">
+              Save code
+            </button>
+          </span>
         </section>
       </span>
 

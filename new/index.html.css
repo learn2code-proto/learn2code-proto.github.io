@@ -252,20 +252,30 @@ section#line-preview {
   display:grid;
 
   grid-template:
-    "cod" 1fr
-    "btn" min-content
+    "code" 1fr
+    "buttons" min-content
   / 1fr;
 
   overflow:auto;
-  padding:8px;
   background-color:var(--proto-bg-2);
 }
 
-section#line-preview button {
-  grid-area:btn;
+section#line-preview pre {
+  margin:0px;
+}
+
+span#line-preview-buttons {
+  grid-area:buttons;
+  display:flex;
+  gap:8px;
+  padding:8px;
+}
+
+span#line-preview-buttons button {
+  flex:auto;
 }
 
 code#line-preview-text {
-  grid-area:cod;
+  grid-area:code;
   font:10pt var(--proto-font-monospace);
 }
