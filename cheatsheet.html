@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
+    <title>MAKE Cheatsheet</title>
+
+    <meta name="author" content="Carston Wiebe" />
+    <meta name="description" content="Cheatsheet of terms for the MAKE Python library" />
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            font: 11pt sans-serif;
+        }
+
+        section.page {
+            /* 8.5" x 11" */
+            width: 8.5in;
+            max-height: 11in;
+            overflow: hidden;  /* to see errors before printing */
+            margin: auto;
+            padding: 16px;
+        }
+
+        @media print {
+            section.page {
+                /* force max height when printing */
+                height: 11in;
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            padding: 4px 0px;
+            margin: 4px 0px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width:100%;
+        }
+
+        td {
+            padding: 8px;
+            vertical-align: top;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="page">
+        <h1>Coding with MAKE</h1>
+        <table id="definitions">
+            <tr>
+                <td>
+                    <h2>General</h2>
+                    <p>
+                        Always start every program with <code>import make</code>
+                    </p>
+                    <p>
+                        Name your componants before you use them to
+                        take actions.
+                    </p>
+                </td>
+                <td>
+                    <h2>Time</h2>
+                    <pre><code>make.wait()
+make.wait(seconds)
+
+make.wait_until(action)
+make.wait_while(action)</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Motors</h2>
+                    <pre><code>motor = make.largemotor(port)
+motor = make.largemotor(port, direction)
+
+motor = make.smallmotor(port)
+motor = make.smallmotor(port, direction)</code></pre>
+            </td>
+                <td>
+                    <h2>Moving Motors</h2>
+                    <pre><code>motor.spin(power)
+motor.spin(power, time)
+
+motor.stop()</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Servos</h2>
+                    <pre><code>servo = make.servo(port)</code></pre>
+                </td>
+                <td>
+                    <h2>Moving Servos</h2>
+                    <pre><code>servo.moveto(angle)</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Buttons</h2>
+                    <pre><code>button = make.button(port)</code></pre>
+                </td>
+                <td>
+                    <h2>Reading Buttons</h2>
+                    <pre><code>button.pressed()
+button.held()</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Drivetrains</h2>
+                    <pre><code>dt = make.drivetrain(left, right)
+dt = make.drivetrain(left, right, drift)
+                    </code></pre>
+                </td>
+                <td>
+                    <h2>Moving Drivetrains</h2>
+                    <pre><code>dt.drive(power)
+dt.drive(power, time)
+
+dt.turn(power)
+dt.turn(power, time)
+
+dt.curve(left, right)
+dt.curve(left, right, time)</code></pre>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="page">
+        <h1>Examples</h1>
+        <table>
+            <tr>
+                <td>
+                    <h2>Drive Forward</h2>
+                    <pre><code>import make
+
+left = make.largemotor(6)
+right = make.largemotor(7)
+
+left.spin(100)
+right.spin(100)
+make.wait(2)
+left.stop()
+right.stop()</code></pre>
+                </td>
+                <td>
+                    <h2>Spin Until Stopped</h2>
+                    <pre><code>import make
+
+left = make.largemotor(6)
+right = make.largemotor(7)
+
+stop_button = make.button(8)
+
+left.spin(100)
+right.spin(-100)
+make.wait_until(stop_button.pressed)
+left.stop()
+right.stop()</code></pre>
+                </td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

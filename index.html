@@ -1,85 +1,95 @@
-<!-- --------------------------------------------------------------------------
-                           !! AUTO-GENERATED PAGE !!
-                             !! NOT SOURCE CODE !!
+<!DOCTYPE HTML>
 
-Generated from a preset layout on 2024-12-06T23:31:55-06:00.
-For source files, look under `./pages` directory.
-Built with `build.sh`.
---------------------------------------------------------------------------- -->
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>PROTO - Block Coding</title>
+  <head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="author" content="Carston Wiebe (ctwiebe23@gmail.com), Mihir Maruvada" />
-  <meta name="description" content="Block coding website (built using Google's Blockly) used by the University of Nebraska-Lincoln's PROTO RSO." />
+    <title>PROTO</title>
+    <meta name="application-name" content="PROTO Block coding" />
+    <meta name="author" content="Carston Wiebe (cwiebe3@huskers.unl.edu)" />
+    <meta name="description" content="Block and line coding website for PROTO at the University of Nebraska-Lincoln" />
+    <meta name="color-scheme" content="light dark" />
 
-  <link rel="shortcut icon" href="./images/favicon.ico" />
-  <link rel="stylesheet" href="./styles/core.css" />
-  <script defer type="module" src="./scripts/core.js"></script>
-</head>
+    <!-- Blockly. -->
+    <script type="text/javascript" defer="" src="./deps/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" defer="" src="./deps/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" defer="" src="./deps/blockly/python_compressed.js"></script>
+    <script type="text/javascript" defer="" src="./deps/blockly/en.js"></script>
+    <!-- Prism. -->
+    <link type="text/css" rel="stylesheet" href="./deps/prism/prism-tomorrow-night.min.css" />
+    <script type="text/javascript" defer="" src="./deps/prism/prism.js"></script>
+    <!-- CodeMirror. -->
+    <link type="text/css" rel="stylesheet" href="./deps/codemirror/codemirror.css" />
+    <link type="text/css" rel="stylesheet" href="./deps/codemirror/show-hint.css" />
+    <script type="text/javascript" defer="" src="./deps/codemirror/codemirror.js"></script>
+    <script type="text/javascript" defer="" src="./deps/codemirror/show-hint.js"></script>
+    <!-- Local. -->
+    <link type="image/x-icon" rel="icon" href="./images/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="./index.html.css" />
+    <script type="text/javascript" src="./index.html.pre.js"></script>
+    <script type="module" src="./index.html.post.js"></script>
+  </head>
 
-<body>
-  <!-- Navbar of links at the top of the page. -->
-  <ul id="nav">
-    <li>
-      <a href="./index.html">
-        <img src="./images/proto-unl.png" alt="PROTO logo." />
-      </a>
-    </li>
-    <li style="visibility:hidden;">
-      <!-- Hidden until Prism darkmode is configured. -->
-      <button id="darkmode-button">Toggle Dark Mode</button>
-    </li>
-  </ul>
+  <body>
+    <nav>
+      <a href="https://proto.unl.edu"
+         title="https://proto.unl.edu"
+         target="_blank">PROTO UNL Website</a>
+      <a href="https://github.com/ctwiebe23/PROTO"
+         title="https://github.com/ctwiebe23/PROTO"
+         target="_blank">MAKE Source</a>
+      <a href="https://github.com/learn2code-proto/learn2code-proto.github.io"
+         title="https://github.com/learn2code-proto/learn2code-proto.github.io"
+         target="_blank">learn2code Source</a>
+    </nav>
 
-<!-- Contains the content of each page. -->
-<div id="buffer">
+    <header>
+      <h1>Block Coding</h1>
+      Drag blocks from the left-most column into the middle column.  A preview
+      of your code will appear on the right.
+      <br />
+      <button onclick="switchEditor()">
+        Change Mode
+      </button>
+    </header>
 
-  <!-- Contributors(s): Carston Wiebe, Mihir Maruvada -->
+    <main>
+      <span id="window-size-error">
+        <h2>ERROR: Screen Too Small</h2>
+        This application requires a larger screen to properly render content.
+        Please rotate your device, increase the window size, or move to a
+        different platform.
+      </span>
 
-<!-- Blockly -->
-<script defer src="./deps/blockly/blockly_compressed.js"></script>
-<script defer src="./deps/blockly/blocks_compressed.js"></script>
-<script defer src="./deps/blockly/python_compressed.js"></script>
-<script defer src="./deps/blockly/en.js"></script>
+      <span id="block-editor">
+        <section id="blockly-canvas"></section>
 
-<!-- Prism -->
-<link rel="stylesheet" href="./deps/prism/prism.css" />
-<script defer src="./deps/prism/prism.js"></script>
+        <section id="line-preview">
+          <pre><code id="line-preview-text" class="language-python"></code></pre>
+          <span id="line-preview-buttons">
+            <button onclick="copyText(document.getElementById('line-preview-text'))">
+              Copy code
+            </button>
+            <button onclick="saveText(document.getElementById('line-preview-text'))">
+              Save code
+            </button>
+          </span>
+        </section>
+      </span>
 
-<!-- Local -->
-<link rel="stylesheet" href="./styles/index.css" />
-<script defer type="module" src="./scripts/index.js"></script>
+      <span id="line-editor" data-closed="">
+        LINE EDITOR HERE
+      </span>
+    </main>
 
-<!-- Main page. -->
-<table id="blockly-window">
-  <tr>
-    <th>Block Editor</th>
-    <th>
-      Code Preview <button id="copy-code-button">Copy Code &darr;</button>
-    </th>
-  </tr>
-
-  <tr>
-    <td id="canvas">
-      <!-- Contains the Blockly editor. -->
-      <div id="editor"></div>
-    </td>
-    <td id="preview">
-      <!-- Contains the code preview (not indented on purpose). -->
-      <pre>
-<code id="code-container" class="language-python">Your code appears here</code>
-      </pre>
-    </td>
-  </tr>
-</table>
-
-</div>
-
-  <!-- Used to display alerts. -->
-  <div id="snackbar"></div>
-</body>
+    <footer>
+      PROTO: Promoting Robotics Opportunity Through Outreach
+      <br />
+      University of Nebraska-Lincoln
+      <br />
+      <a href="mailto:proto@unl.edu"
+         title="mailto:proto@unl.edu">Contact Us</a>
+    </footer>
+  </body>
 </html>
