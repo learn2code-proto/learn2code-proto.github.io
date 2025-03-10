@@ -12,6 +12,22 @@
   <meta name="color-scheme" content="light" />
 
   <style>
+    @font-face {
+      font-family: DMMono;
+      src: url('./fonts/DMMono-Regular.ttf');
+    }
+
+    @font-face {
+      font-family: Sarala;
+      src: url('./fonts/Sarala-Regular.ttf');
+    }
+
+    @font-face {
+      font-family: Sarala;
+      src: url('./fonts/Sarala-Bold.ttf');
+      font-weight: bold;
+    }
+
     * {
       padding: 0px;
       margin: 0px;
@@ -19,7 +35,20 @@
     }
 
     html {
-      font: 11pt sans-serif;
+      font: 11pt Sarala;
+      line-height: 1.2;
+      color: #222;
+    }
+
+    code, kbd {
+      font-family: DMMono;
+      color: #666;
+    }
+
+    kbd {
+      border: 1px solid #777;
+      border-radius: 4px;
+      padding-inline: 2px;
     }
 
     section.page {
@@ -30,12 +59,14 @@
       /* to see errors before printing */
       margin: auto;
       padding: 16px;
+      border-bottom: 1px dashed #bbb;
     }
 
     @media print {
       section.page {
         /* force max height when printing */
         height: 11in;
+        border: none;
       }
     }
 
@@ -49,6 +80,7 @@
 
     h1 {
       text-align: center;
+      font-size: 1.8rem;
     }
 
     table {
@@ -57,9 +89,19 @@
     }
 
     td {
-      padding: 8px;
+      padding: 16px;
       vertical-align: top;
       width: 50%;
+    }
+
+    *.centered {
+      text-align: center;
+    }
+
+    @media print {
+      *.no-print {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -67,6 +109,7 @@
 <body>
   <section class="page">
     <h1>Coding with MAKE</h1>
+    <div class="no-print centered"><small>This page is printable!</small></div>
     <table id="definitions">
       <tr>
         <td>
@@ -77,6 +120,10 @@
           <p>
             Name your componants before you use them to
             take actions.
+          </p>
+          <p>
+            Everything after a <kbd>#</kbd> is ignored by the program — use that to
+            explain what the code does in English while you write it!
           </p>
         </td>
         <td>

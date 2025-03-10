@@ -39,6 +39,7 @@
       Source</a>
     <a href="https://github.com/learn2code-proto/learn2code-proto.github.io"
       title="https://github.com/learn2code-proto/learn2code-proto.github.io" target="_blank">learn2code Source</a>
+    <a href="./cheatsheet.html" title="./cheatsheet.html" target="_blank">Cheatsheet</a>
   </nav>
 
   <header>
@@ -51,19 +52,19 @@
   </header>
 
   <main>
-    <span id="window-size-error">
+    <div id="window-size-error">
       <h2>ERROR: Screen Too Small</h2>
       This application requires a larger screen to properly render content.
       Please rotate your device, increase the window size, or move to a
       different platform.
-    </span>
+    </div>
 
-    <span id="block-editor">
+    <div id="block-editor">
       <section id="blockly-canvas"></section>
 
       <section id="line-preview">
         <pre><code id="line-preview-text" class="language-python"></code></pre>
-        <span id="line-preview-buttons">
+        <span class="save-code-buttons">
           <button onclick="copyText(document.getElementById('line-preview-text'))">
             Copy code
           </button>
@@ -72,11 +73,28 @@
           </button>
         </span>
       </section>
-    </span>
+    </div>
 
-    <span id="line-editor" data-closed="">
-      LINE EDITOR HERE
-    </span>
+    <div id="line-editor" data-closed="">
+      <pre><code id="line-editor-text" contenteditable="">import make
+
+# name components
+
+
+
+# take actions
+
+
+</code></pre>
+      <span class="save-code-buttons">
+        <button onclick="copyText(document.getElementById('line-editor-text'))">
+          Copy code
+        </button>
+        <button onclick="saveText(document.getElementById('line-editor-text'))">
+          Save code
+        </button>
+      </span>
+    </div>
   </main>
 
   <footer>

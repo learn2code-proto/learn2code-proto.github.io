@@ -172,27 +172,64 @@ footer {
  * Window Size Error Page.
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-span#window-size-error {
+div#window-size-error {
   display: none;
   text-align: center;
   padding: 16px;
 }
 
-span#window-size-error h2 {
+div#window-size-error h2 {
   color: var(--proto-error);
 }
 
 @media (max-width:512px) {
-  span#window-size-error {
+  div#window-size-error {
     display: block;
   }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * General Editor
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+span.save-code-buttons {
+  grid-area: buttons;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+}
+
+span.save-code-buttons button {
+  flex: auto;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Line editor
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+div#line-editor {
+  border: 2px solid var(--proto-text);
+  border-radius: 8px;
+
+  margin: 4px;
+}
+
+div#line-editor[data-closed] {
+  display: none;
+}
+
+code#line-editor-text {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 8px;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Block editor
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-span#block-editor {
+div#block-editor {
   display: grid;
 
   grid-template-areas:
@@ -206,7 +243,7 @@ span#block-editor {
   min-height: 512px;
 }
 
-span#block-editor[data-closed] {
+div#block-editor[data-closed] {
   display: none;
 }
 
@@ -228,7 +265,7 @@ span#block-editor[data-closed] {
   }
 }
 
-span#block-editor section {
+div#block-editor section {
   border: 2px solid var(--proto-text);
   border-radius: 8px;
 
@@ -259,17 +296,6 @@ section#line-preview {
 
 section#line-preview pre {
   margin: 0px;
-}
-
-span#line-preview-buttons {
-  grid-area: buttons;
-  display: flex;
-  gap: 8px;
-  padding: 8px;
-}
-
-span#line-preview-buttons button {
-  flex: auto;
 }
 
 code#line-preview-text {
