@@ -25,8 +25,8 @@ workspace.addChangeListener((event) => {
   const codeContainer = document.getElementById('line-preview-text');
 
   codeContainer.innerHTML = Prism.highlight
-    ( 'import make\n\n' + code
-    , Prism.languages.python
-    , 'python'
+    ('import make\n\n' + code
+      , Prism.languages.python
+      , 'python'
     );
 });

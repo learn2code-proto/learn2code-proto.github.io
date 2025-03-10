@@ -465,9 +465,9 @@ python.pythonGenerator.forBlock['wait'] = function (block) {
 
 python.pythonGenerator.forBlock['until'] = function (block) {
   var value_function = python.pythonGenerator.valueToCode
-    ( block
-    , 'function'
-    , python.Order.ATOMIC
+    (block
+      , 'function'
+      , python.Order.ATOMIC
     );
 
   let len = value_function.length;
