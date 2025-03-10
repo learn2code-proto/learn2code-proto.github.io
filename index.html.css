@@ -220,7 +220,6 @@ div#line-editor[data-closed] {
 
 code#line-editor-text {
   display: block;
-  width: 100%;
   padding: 8px;
   margin: 8px;
 }
