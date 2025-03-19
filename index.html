@@ -1,7 +1,6 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -25,6 +24,8 @@
   <link type="text/css" rel="stylesheet" href="./deps/codemirror/show-hint.css" />
   <script type="text/javascript" defer="" src="./deps/codemirror/codemirror.js"></script>
   <script type="text/javascript" defer="" src="./deps/codemirror/show-hint.js"></script>
+  <script type="text/javascript" defer="" src="./deps/codemirror/python.js"></script>
+  <script type="text/javascript" defer="" src="./deps/codemirror/python-hint.js"></script>
   <!-- Local. -->
   <link type="image/x-icon" rel="icon" href="./images/favicon.ico" />
   <link type="text/css" rel="stylesheet" href="./index.html.css" />
@@ -76,21 +77,21 @@
     </div>
 
     <div id="line-editor" data-closed="">
-      <pre><code id="line-editor-text" contenteditable="" spellcheck="false">import make
-
-# name components
-
-
-
-# take actions
-
-
-</code></pre>
+      <div class="code-editor-container">
+        <!-- Where User writes code (contenteditable) -->
+        <div id="code-input" class="code-input" contenteditable="true" spellcheck="false">import make
+    
+    # name components
+    
+    # take actions</div>
+      </div>
+      <!-- Autocomplete suggestion box. -->
+      <div id="suggestion-box"></div>
       <span class="save-code-buttons">
-        <button onclick="copyText(document.getElementById('line-editor-text'))">
+        <button onclick="copyTextFromLineEditor()">
           Copy code
         </button>
-        <button onclick="saveText(document.getElementById('line-editor-text'))">
+        <button onclick="saveTextFromLineEditor()">
           Save code
         </button>
       </span>
@@ -105,5 +106,5 @@
     <a href="mailto:proto@unl.edu" title="mailto:proto@unl.edu">Contact Us</a>
   </footer>
 </body>
-
 </html>
+>>>>>>> Stashed changes
