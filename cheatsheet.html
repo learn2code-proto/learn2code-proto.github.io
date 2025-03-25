@@ -3,190 +3,190 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <title>MAKE Cheatsheet</title>
-  <meta name="author" content="Carston Wiebe (cwiebe3@huskers.unl.edu)" />
-  <meta name="description" content="Cheatsheet of terms for the MAKE Python library" />
-  <meta name="color-scheme" content="light" />
+    <title>MAKE Cheatsheet</title>
+    <meta name="author" content="Carston Wiebe (cwiebe3@huskers.unl.edu)" />
+    <meta name="description" content="Cheatsheet of terms for the MAKE Python library" />
+    <meta name="color-scheme" content="light" />
 
-  <style>
-    @font-face {
-      font-family: DMMono;
-      src: url('./fonts/DMMono-Regular.ttf');
-    }
+    <style>
+        @font-face {
+            font-family: DMMono;
+            src: url('./fonts/DMMono-Regular.ttf');
+        }
 
-    @font-face {
-      font-family: Sarala;
-      src: url('./fonts/Sarala-Regular.ttf');
-    }
+        @font-face {
+            font-family: Sarala;
+            src: url('./fonts/Sarala-Regular.ttf');
+        }
 
-    @font-face {
-      font-family: Sarala;
-      src: url('./fonts/Sarala-Bold.ttf');
-      font-weight: bold;
-    }
+        @font-face {
+            font-family: Sarala;
+            src: url('./fonts/Sarala-Bold.ttf');
+            font-weight: bold;
+        }
 
-    * {
-      padding: 0px;
-      margin: 0px;
-      box-sizing: border-box;
-    }
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
 
-    html {
-      font: 11pt Sarala;
-      line-height: 1.2;
-      color: #222;
-    }
+        html {
+            font: 11pt Sarala;
+            line-height: 1.2;
+            color: #222;
+        }
 
-    code,
-    kbd {
-      font-family: DMMono;
-      color: #666;
-    }
+        code,
+        kbd {
+            font-family: DMMono;
+            color: #666;
+        }
 
-    kbd {
-      border: 1px solid #777;
-      border-radius: 4px;
-      padding-inline: 2px;
-    }
+        kbd {
+            border: 1px solid #777;
+            border-radius: 4px;
+            padding-inline: 2px;
+        }
 
-    section.page {
-      /* 8.5" x 11" */
-      width: 8.5in;
-      max-height: 11in;
-      overflow: hidden;
-      /* to see errors before printing */
-      margin: auto;
-      padding: 16px;
-      border-bottom: 1px dashed #bbb;
-    }
+        section.page {
+            /* 8.5" x 11" */
+            width: 8.5in;
+            max-height: 11in;
+            overflow: hidden;
+            /* to see errors before printing */
+            margin: auto;
+            padding: 16px;
+            border-bottom: 1px dashed #bbb;
+        }
 
-    @media print {
-      section.page {
-        /* force max height when printing */
-        height: 11in;
-        border: none;
-      }
-    }
+        @media print {
+            section.page {
+                /* force max height when printing */
+                height: 11in;
+                border: none;
+            }
+        }
 
-    h1,
-    h2,
-    h3,
-    p {
-      padding: 4px 0px;
-      margin: 4px 0px;
-    }
+        h1,
+        h2,
+        h3,
+        p {
+            padding: 4px 0px;
+            margin: 4px 0px;
+        }
 
-    h1 {
-      text-align: center;
-      font-size: 1.8rem;
-    }
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+        }
 
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-    td {
-      padding: 16px;
-      vertical-align: top;
-      width: 50%;
-    }
+        td {
+            padding: 16px;
+            vertical-align: top;
+            width: 50%;
+        }
 
-    *.centered {
-      text-align: center;
-    }
+        *.centered {
+            text-align: center;
+        }
 
-    @media print {
-      *.no-print {
-        display: none;
-      }
-    }
-  </style>
+        @media print {
+            *.no-print {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <section class="page">
-    <h1>Coding with MAKE</h1>
-    <div class="no-print centered">
-      <small>This page is printable! Set <q>margins</q> to none in the print menu to
-        remove the page name and other information from the PDF.</small>
-    </div>
-    <table id="definitions">
-      <tr>
-        <td>
-          <h2>General</h2>
-          <p>
-            Always start every program with <code>import make</code>
-          </p>
-          <p>
-            Name your componants before you use them to
-            take actions.
-          </p>
-          <p>
-            Everything after a <kbd>#</kbd> is ignored by the program — use that to
-            explain what the code does in English while you write it!
-          </p>
-        </td>
-        <td>
-          <h2>Time</h2>
-          <pre><code>make.wait()
+    <section class="page">
+        <h1>Coding with MAKE</h1>
+        <div class="no-print centered">
+            <small>This page is printable! Set <q>margins</q> to none in the print menu to
+                remove the page name and other information from the PDF.</small>
+        </div>
+        <table id="definitions">
+            <tr>
+                <td>
+                    <h2>General</h2>
+                    <p>
+                        Always start every program with <code>import make</code>
+                    </p>
+                    <p>
+                        Name your componants before you use them to
+                        take actions.
+                    </p>
+                    <p>
+                        Everything after a <kbd>#</kbd> is ignored by the program — use that to
+                        explain what the code does in English while you write it!
+                    </p>
+                </td>
+                <td>
+                    <h2>Time</h2>
+                    <pre><code>make.wait()
 make.wait(seconds)
 
 make.wait_until(action)
 make.wait_while(action)</code></pre>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h2>Naming Motors</h2>
-          <pre><code>motor = make.largemotor(port)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Motors</h2>
+                    <pre><code>motor = make.largemotor(port)
 motor = make.largemotor(port, direction)
 
 motor = make.smallmotor(port)
 motor = make.smallmotor(port, direction)</code></pre>
-        </td>
-        <td>
-          <h2>Moving Motors</h2>
-          <pre><code>motor.spin(power)
+                </td>
+                <td>
+                    <h2>Moving Motors</h2>
+                    <pre><code>motor.spin(power)
 motor.spin(power, time)
 
 motor.stop()</code></pre>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h2>Naming Servos</h2>
-          <pre><code>servo = make.servo(port)</code></pre>
-        </td>
-        <td>
-          <h2>Moving Servos</h2>
-          <pre><code>servo.moveto(angle)</code></pre>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h2>Naming Buttons</h2>
-          <pre><code>button = make.button(port)</code></pre>
-        </td>
-        <td>
-          <h2>Reading Buttons</h2>
-          <pre><code>button.pressed()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Servos</h2>
+                    <pre><code>servo = make.servo(port)</code></pre>
+                </td>
+                <td>
+                    <h2>Moving Servos</h2>
+                    <pre><code>servo.moveto(angle)</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Buttons</h2>
+                    <pre><code>button = make.button(port)</code></pre>
+                </td>
+                <td>
+                    <h2>Reading Buttons</h2>
+                    <pre><code>button.pressed()
 button.held()</code></pre>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h2>Naming Drivetrains</h2>
-          <pre><code>dt = make.drivetrain(left, right)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Naming Drivetrains</h2>
+                    <pre><code>dt = make.drivetrain(left, right)
 dt = make.drivetrain(left, right, drift)
                     </code></pre>
-        </td>
-        <td>
-          <h2>Moving Drivetrains</h2>
-          <pre><code>dt.drive(power)
+                </td>
+                <td>
+                    <h2>Moving Drivetrains</h2>
+                    <pre><code>dt.drive(power)
 dt.drive(power, time)
 
 dt.turn(power)
@@ -196,18 +196,18 @@ dt.curve(left, right)
 dt.curve(left, right, time)
 
 dt.stop()</code></pre>
-        </td>
-      </tr>
-    </table>
-  </section>
+                </td>
+            </tr>
+        </table>
+    </section>
 
-  <section class="page">
-    <h1>Examples</h1>
-    <table>
-      <tr>
-        <td>
-          <h2>Drive Forward</h2>
-          <pre><code>import make
+    <section class="page">
+        <h1>Examples</h1>
+        <table>
+            <tr>
+                <td>
+                    <h2>Drive Forward</h2>
+                    <pre><code>import make
 
 left = make.largemotor(6)
 right = make.largemotor(7)
@@ -217,10 +217,10 @@ right.spin(100)
 make.wait(2)
 left.stop()
 right.stop()</code></pre>
-        </td>
-        <td>
-          <h2>Spin Until Stopped</h2>
-          <pre><code>import make
+                </td>
+                <td>
+                    <h2>Spin Until Stopped</h2>
+                    <pre><code>import make
 
 left = make.largemotor(6)
 right = make.largemotor(7)
@@ -232,10 +232,10 @@ right.spin(-100)
 make.wait_until(stop_button.pressed)
 left.stop()
 right.stop()</code></pre>
-        </td>
-      </tr>
-    </table>
-  </section>
+                </td>
+            </tr>
+        </table>
+    </section>
 </body>
 
 </html>
