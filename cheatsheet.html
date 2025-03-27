@@ -43,13 +43,15 @@
         code,
         kbd {
             font-family: DMMono;
-            color: #666;
+            color: #000;
         }
 
         kbd {
+            display: inline-block;
             border: 1px solid #777;
             border-radius: 4px;
             padding-inline: 2px;
+            padding-block: -1px;
         }
 
         section.page {
@@ -104,12 +106,24 @@
                 display: none;
             }
         }
+
+        va {
+            color:#44c;
+        }
+
+        fn {
+            color:#c44;
+        }
+
+        cm {
+            color:#4c4;
+        }
     </style>
 </head>
 
 <body>
     <section class="page">
-        <h1>Coding with MAKE</h1>
+        <h1>Coding with Proto</h1>
         <div class="no-print centered">
             <small>This page is printable! Set <q>margins</q> to none in the print menu to
                 remove the page name and other information from the PDF.</small>
@@ -119,89 +133,89 @@
                 <td>
                     <h2>General</h2>
                     <p>
-                        Always start every program with <code>import make</code>
+                        Always start every program with <code><fn>import</fn> <va>make</va></code>
                     </p>
                     <p>
                         Name your componants before you use them to
                         take actions.
                     </p>
                     <p>
-                        Everything after a <kbd>#</kbd> is ignored by the program — use that to
+                        Everything after a <code><cm>#</cm></code> is ignored by the program — use that to
                         explain what the code does in English while you write it!
                     </p>
                 </td>
                 <td>
                     <h2>Time</h2>
-                    <pre><code>make.wait()
-make.wait(seconds)
+                    <pre><code><va>make</va>.<fn>wait</fn>()
+<va>make</va>.<fn>wait</fn>(<va>seconds</va>)
 
-make.wait_until(action)
-make.wait_while(action)</code></pre>
+<va>make</va>.<fn>wait_until</fn>(<va>action</va>)
+<va>make</va>.<fn>wait_while</fn>(<va>action</va>)</code></pre>
                 </td>
             </tr>
             <tr>
                 <td>
                     <h2>Naming Motors</h2>
-                    <pre><code>motor = make.largemotor(port)
-motor = make.largemotor(port, direction)
+                    <pre><code><va>motor</va> = <va>make</va>.<fn>largemotor</fn>(<va>port</va>)
+<va>motor</va> = <va>make</va>.<fn>largemotor</fn>(<va>port</va>, <va>direction</va>)
 
-motor = make.smallmotor(port)
-motor = make.smallmotor(port, direction)</code></pre>
+<va>motor</va> = <va>make</va>.<fn>smallmotor</fn>(<va>port</va>)
+<va>motor</va> = <va>make</va>.<fn>smallmotor</fn>(<va>port</va>, <va>direction</va>)</code></pre>
                 </td>
                 <td>
                     <h2>Moving Motors</h2>
-                    <pre><code>motor.spin(power)
-motor.spin(power, time)
+                    <pre><code><va>motor</va>.<fn>spin</fn>(<va>power</va>)
+<va>motor</va>.<fn>spin</fn>(<va>power</va>, <va>time</va>)
 
-motor.spin_back(power)
-motor.spin_back(power, time)
+<va>motor</va>.<fn>spin_back</fn>(<va>power</va>)
+<va>motor</va>.<fn>spin_back</fn>(<va>power</va>, <va>time</va>)
 
-motor.stop()</code></pre>
+<va>motor</va>.<fn>stop</fn>()</code></pre>
                 </td>
             </tr>
             <tr>
                 <td>
                     <h2>Naming Servos</h2>
-                    <pre><code>servo = make.servo(port)</code></pre>
+                    <pre><code><va>servo</va> = <va>make</va>.<fn>servo</fn>(<va>port</va>)</code></pre>
                 </td>
                 <td>
                     <h2>Moving Servos</h2>
-                    <pre><code>servo.moveto(angle)</code></pre>
+                    <pre><code><va>servo</va>.<fn>moveto</fn>(<va>angle</va>)</code></pre>
                 </td>
             </tr>
             <tr>
                 <td>
                     <h2>Naming Buttons</h2>
-                    <pre><code>button = make.button(port)</code></pre>
+                    <pre><code><va>button</va> = <va>make</va>.<fn>button</fn>(<va>port</va>)</code></pre>
                 </td>
                 <td>
                     <h2>Reading Buttons</h2>
-                    <pre><code>button.pressed()
-button.held()</code></pre>
+                    <pre><code><va>button</va>.<fn>pressed</fn>()
+<va>button</va>.<fn>held</fn>()</code></pre>
                 </td>
             </tr>
             <tr>
                 <td>
                     <h2>Naming Drivetrains</h2>
-                    <pre><code>dt = make.drivetrain(left, right)
-dt = make.drivetrain(left, right, drift)
+                    <pre><code><va>dt</va> = <va>make</va>.<fn>drivetrain</fn>(<va>left</va>, <va>right</va>)
+<va>dt</va> = <va>make</va>.<fn>drivetrain</fn>(<va>left</va>, <va>right</va>, <va>drift</va>)
                     </code></pre>
                 </td>
                 <td>
                     <h2>Moving Drivetrains</h2>
-                    <pre><code>dt.drive(power)
-dt.drive(power, time)
-dt.drive_back(power, time)
+                    <pre><code><va>dt</va>.<fn>drive</fn>(<va>power</va>)
+<va>dt</va>.<fn>drive</fn>(<va>power</va>, <va>time</va>)
+<va>dt</va>.<fn>drive_back</fn>(<va>power</va>, <va>time</va>)
 
-dt.turn(power)
-dt.turn(power, time)
-dt.turn_back(power, time)
+<va>dt</va>.<fn>turn</fn>(<va>power</va>)
+<va>dt</va>.<fn>turn</fn>(<va>power</va>, <va>time</va>)
+<va>dt</va>.<fn>turn_back</fn>(<va>power</va>, <va>time</va>)
 
-dt.curve(left, right)
-dt.curve(left, right, time)
-dt.curve_back(left, right, time)
+<va>dt</va>.<fn>curve</fn>(<va>left</va>, <va>right</va>)
+<va>dt</va>.<fn>curve</fn>(<va>left</va>, <va>right</va>, <va>time</va>)
+<va>dt</va>.<fn>curve_back</fn>(<va>left</va>, <va>right</va>, <va>time</va>)
 
-dt.stop()</code></pre>
+<va>dt</va>.<fn>stop</fn>()</code></pre>
                 </td>
             </tr>
         </table>
@@ -213,31 +227,40 @@ dt.stop()</code></pre>
             <tr>
                 <td>
                     <h2>Drive Forward</h2>
-                    <pre><code>import make
+                    <pre><code><fn>import</fn> <va>make</va>
 
-left = make.largemotor(6)
-right = make.largemotor(7)
+<cm># name your motors!</cm>
+<va>left</va> = <va>make</va>.<fn>largemotor</fn>(6)
+<va>right</va> = <va>make</va>.<fn>largemotor</fn>(7)
 
-left.spin(100)
-right.spin(100)
-make.wait(2)
-left.stop()
-right.stop()</code></pre>
+<cm># spin both motors forwards</cm>
+<va>left</va>.<fn>spin</fn>(100)
+<va>right</va>.<fn>spin</fn>(100)
+<cm># wait for 2 seconds</cm>
+<va>make</va>.<fn>wait</fn>(2)
+<cm># stop both motors</cm>
+<va>left</va>.<fn>stop</fn>()
+<va>right</va>.<fn>stop</fn>()</code></pre>
                 </td>
                 <td>
                     <h2>Spin Until Stopped</h2>
-                    <pre><code>import make
+                    <pre><code><fn>import</fn> <va>make</va>
 
-left = make.largemotor(6)
-right = make.largemotor(7)
+<cm># name your motors!</cm>
+<va>left</va> = <va>make</va>.<fn>largemotor</fn>(6)
+<va>right</va> = <va>make</va>.<fn>largemotor</fn>(7)
 
-stop_button = make.button(8)
+<cm># name your button</cm>
+<va>stop_button</va> = <va>make</va>.<fn>button</fn>(8)
 
-left.spin(100)
-right.spin(-100)
-make.wait_until(stop_button.pressed)
-left.stop()
-right.stop()</code></pre>
+<cm># spin one motor forwards, and other back</cm>
+<va>left</va>.<fn>spin</fn>(100)
+<va>right</va>.<fn>spin_back</fn>(100)
+<cm># wait until the stop button is pressed</cm>
+<va>make</va>.<fn>wait_until</fn>(<va>stop_button</va>.<fn>pressed</fn>)
+<cm># stop both motors</cm>
+<va>left</va>.<fn>stop</fn>()
+<va>right</va>.<fn>stop</fn>()</code></pre>
                 </td>
             </tr>
         </table>
