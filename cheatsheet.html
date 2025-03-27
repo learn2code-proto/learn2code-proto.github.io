@@ -153,6 +153,9 @@ motor = make.smallmotor(port, direction)</code></pre>
                     <pre><code>motor.spin(power)
 motor.spin(power, time)
 
+motor.spin_back(power)
+motor.spin_back(power, time)
+
 motor.stop()</code></pre>
                 </td>
             </tr>
@@ -188,12 +191,15 @@ dt = make.drivetrain(left, right, drift)
                     <h2>Moving Drivetrains</h2>
                     <pre><code>dt.drive(power)
 dt.drive(power, time)
+dt.drive_back(power, time)
 
 dt.turn(power)
 dt.turn(power, time)
+dt.turn_back(power, time)
 
 dt.curve(left, right)
 dt.curve(left, right, time)
+dt.curve_back(left, right, time)
 
 dt.stop()</code></pre>
                 </td>
