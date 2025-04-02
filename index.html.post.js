@@ -1,9 +1,9 @@
-console.info('... post script loaded');
+console.info("... post script loaded");
 
-import { toolbox } from './module-scripts/blocks.js';
-import { getTheme } from './module-scripts/themes.js';
+import { toolbox } from "./module-scripts/blocks.js";
+import { getTheme } from "./module-scripts/themes.js";
 
-var workspace = Blockly.inject('blockly-canvas', {
+var workspace = Blockly.inject("blockly-canvas", {
   theme: getTheme(),
   toolbox: toolbox,
 });
@@ -16,33 +16,31 @@ const supportedEvents = new Set([
 ]);
 
 workspace.addChangeListener((event) => {
-  if (workspace.isDragging())
-    return;
-  if (!supportedEvents.has(event.type))
-    return;
+  if (workspace.isDragging()) return;
+  if (!supportedEvents.has(event.type)) return;
 
   const code = python.pythonGenerator.workspaceToCode(workspace);
-  const codeContainer = document.getElementById('line-preview-text');
+  const codeContainer = document.getElementById("line-preview-text");
 
-  codeContainer.innerHTML = Prism.highlight
-    ('import make\n\n' + code
-      , Prism.languages.python
-      , 'python'
-    );
+  codeContainer.innerHTML = Prism.highlight(
+    "import make\n\n" + code,
+    Prism.languages.python,
+    "python"
+  );
 });
 
 // Initialize the line editor
-const codeInput = document.getElementById('code-input');
-const suggestionBox = document.getElementById('suggestion-box');
-const codeEditorContainer = document.querySelector('.code-editor-container');
+const codeInput = document.getElementById("code-input");
+const suggestionBox = document.getElementById("suggestion-box");
+const codeEditorContainer = document.querySelector(".code-editor-container");
 
 // Make the entire code editor pane clickable
 if (codeEditorContainer && codeInput) {
-  codeEditorContainer.addEventListener('click', () => {
+  codeEditorContainer.addEventListener("click", () => {
     codeInput.focus(); // Focus the contenteditable div
   });
 } else {
-  console.error('Could not find code editor container or input element.');
+  console.error("Could not find code editor container or input element.");
 }
 
 // Define keywords for autocomplete
@@ -66,35 +64,64 @@ const keywords = [
 let indentationLevel = 0;
 let inIndentMode = false;
 
-// Copy Code Button 
+// Add this right after initializing codeInput
+function applyInitialHighlighting() {
+  const code = codeInput.innerText;
+  const highlightedCode = Prism.highlight(
+    code,
+    Prism.languages.python,
+    "python"
+  );
+  codeInput.innerHTML = highlightedCode;
+}
+
+// Call it when page loads and when switching to line editor
+document.addEventListener("DOMContentLoaded", applyInitialHighlighting);
+
+// Update switchEditor function
+function switchEditor() {
+  const blockEditor = document.getElementById("block-editor");
+  const lineEditor = document.getElementById("line-editor");
+
+  if (blockEditor.getAttribute("data-closed") === "") {
+    blockEditor.setAttribute("data-closed", "true");
+    lineEditor.setAttribute("data-closed", "");
+    applyInitialHighlighting();
+  } else {
+    blockEditor.setAttribute("data-closed", "");
+    lineEditor.setAttribute("data-closed", "true");
+  }
+}
+
+// Copy Code Button
 function copyTextFromLineEditor() {
   const code = codeInput.innerText;
   navigator.clipboard.writeText(code).then(() => {
-    alert('Code copied to clipboard!');
+    alert("Code copied to clipboard!");
   });
 }
 
 // Save code Button
 function saveTextFromLineEditor() {
   const code = codeInput.innerText;
-  const blob = new Blob([code], { type: 'text/plain' });
+  const blob = new Blob([code], { type: "text/plain" });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   a.href = url;
-  a.download = 'main.py';
+  a.download = "main.py";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
 
-codeInput.addEventListener('input', () => {
+codeInput.addEventListener("input", () => {
   const caretPosition = getCaretPosition(codeInput);
   const code = codeInput.innerText;
   const highlightedCode = Prism.highlight(
     code,
     Prism.languages.python,
-    'python'
+    "python"
   );
 
   codeInput.innerHTML = highlightedCode;
@@ -118,37 +145,53 @@ codeInput.addEventListener('input', () => {
 function getWordAfterDotAtCaret(text, caretPosition) {
   const leftOfCaret = text.slice(0, caretPosition);
   const match = leftOfCaret.match(/\.([a-zA-Z_]*)$/);
-  const wordAfterDot = match ? match[1] : '';
+  const wordAfterDot = match ? match[1] : "";
   return { wordAfterDot, caretOffset: leftOfCaret.length };
 }
 
-// Show autocomplete suggestions in the box
 function showSuggestions(matches, caretOffset) {
-  suggestionBox.innerHTML = '';
+  suggestionBox.innerHTML = "";
   matches.forEach((match) => {
-    const suggestion = document.createElement('div');
+    const suggestion = document.createElement("div");
     suggestion.innerText = match;
     suggestionBox.appendChild(suggestion);
   });
-  const rect = codeInput.getBoundingClientRect();
+
+  // Get the current cursor position
+  const range = window.getSelection().getRangeAt(0);
+  const rect = range.getBoundingClientRect();
+
+  // Position the suggestion box near the cursor
+  suggestionBox.style.position = "absolute";
   suggestionBox.style.left = `${rect.left + window.scrollX}px`;
   suggestionBox.style.top = `${rect.bottom + window.scrollY}px`;
-  suggestionBox.style.display = 'block';
+  suggestionBox.style.display = "block";
+
+  // Ensure the box stays visible if near window edge
+  const boxRect = suggestionBox.getBoundingClientRect();
+  if (boxRect.right > window.innerWidth) {
+    suggestionBox.style.left = `${window.innerWidth - boxRect.width - 10}px`;
+  }
+  if (boxRect.bottom > window.innerHeight) {
+    suggestionBox.style.top = `${rect.top + window.scrollY - boxRect.height}px`;
+  }
 }
 
 function hideSuggestions() {
-  suggestionBox.style.display = 'none';
+  suggestionBox.style.display = "none";
 }
 
-codeInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
+codeInput.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    hideSuggestions();
+  } else if (event.key === "Enter") {
     event.preventDefault();
     if (inIndentMode) {
-      document.execCommand('insertLineBreak');
+      document.execCommand("insertLineBreak");
       for (let i = 0; i < indentationLevel; i++) {
-        const indentSpan = document.createElement('span');
-        indentSpan.className = 'indent-space';
-        indentSpan.innerHTML = '&nbsp;&nbsp;&nbsp;';
+        const indentSpan = document.createElement("span");
+        indentSpan.className = "indent-space";
+        indentSpan.innerHTML = "&nbsp;&nbsp;&nbsp;";
         const selection = window.getSelection();
         const range = selection.getRangeAt(0);
         range.insertNode(indentSpan);
@@ -157,12 +200,12 @@ codeInput.addEventListener('keydown', (event) => {
         selection.addRange(range);
       }
     } else {
-      document.execCommand('insertLineBreak');
+      document.execCommand("insertLineBreak");
     }
   }
 
-  if (event.key === 'Tab') {
-    if (suggestionBox.style.display === 'block') {
+  if (event.key === "Tab") {
+    if (suggestionBox.style.display === "block") {
       event.preventDefault();
       const suggestion = suggestionBox.firstChild
         ? suggestionBox.firstChild.innerText
@@ -184,7 +227,7 @@ codeInput.addEventListener('keydown', (event) => {
         const highlightedCode = Prism.highlight(
           updatedText,
           Prism.languages.python,
-          'python'
+          "python"
         );
         codeInput.innerHTML = highlightedCode;
 
@@ -196,9 +239,9 @@ codeInput.addEventListener('keydown', (event) => {
       event.preventDefault();
       inIndentMode = true;
       indentationLevel++;
-      const indentSpan = document.createElement('span');
-      indentSpan.className = 'indent-space';
-      indentSpan.innerHTML = '&nbsp;&nbsp;&nbsp;';
+      const indentSpan = document.createElement("span");
+      indentSpan.className = "indent-space";
+      indentSpan.innerHTML = "&nbsp;&nbsp;&nbsp;";
       const selection = window.getSelection();
       const range = selection.getRangeAt(0);
       range.insertNode(indentSpan);
@@ -208,7 +251,7 @@ codeInput.addEventListener('keydown', (event) => {
     }
   }
 
-  if (event.key === 'Backspace') {
+  if (event.key === "Backspace") {
     const selection = window.getSelection();
     if (selection.rangeCount > 0) {
       const range = selection.getRangeAt(0);
@@ -220,7 +263,7 @@ codeInput.addEventListener('keydown', (event) => {
         if (
           previousNode &&
           previousNode.classList &&
-          previousNode.classList.contains('indent-space')
+          previousNode.classList.contains("indent-space")
         ) {
           event.preventDefault();
           previousNode.remove();
@@ -233,7 +276,7 @@ codeInput.addEventListener('keydown', (event) => {
         if (
           previousNode &&
           previousNode.classList &&
-          previousNode.classList.contains('indent-space')
+          previousNode.classList.contains("indent-space")
         ) {
           event.preventDefault();
           previousNode.remove();
