@@ -6,8 +6,11 @@ function copyText(element) {
 
 function saveText(element) {
     const zip = new JSZip();
+
+    // Add the code to a file named main.py
     zip.file('main.py', element.innerText);
 
+    // Compress the code and download it
     zip.generateAsync({ type: "base64" })
         .then((encoding) => {
             const dummyLink = document.createElement('a');
