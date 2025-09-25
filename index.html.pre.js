@@ -5,12 +5,16 @@ function copyText(element) {
 }
 
 function saveText(element) {
-    const encoding = btoa(element.innerText);
-    const dummyLink = document.createElement('a');
+    const zip = new JSZip();
+    zip.file('main.py', element.innerText);
 
-    dummyLink.download = 'main.py';
-    dummyLink.href = 'data:text/python;base64,' + encoding;
-    dummyLink.dispatchEvent(new MouseEvent('click'));
+    zip.generateAsync({ type: "base64" })
+        .then((encoding) => {
+            const dummyLink = document.createElement('a');
+            dummyLink.download = 'proto.zip';
+            dummyLink.href = 'data:application/zip;base64,' + encoding;
+            dummyLink.dispatchEvent(new MouseEvent('click'));
+        });
 }
 
 function switchEditor() {
